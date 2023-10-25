@@ -1,43 +1,90 @@
 from __future__ import annotations
 
+import re
 import json
 import requests
-import numpy as np
-import pandas as pd
+from random import randint
 from bs4 import BeautifulSoup
+from urllib.parse import quote
+from urllib.parse import urlencode
 
 
-requestHeader = {
-  'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-  'accept-encoding': 'gzip, deflate, br',
-  'accept-language': 'en-US,en;q=0.9',
-  'cache-control': 'max-age=0',
-  'cookie': 'zguid=23|%24d14f0059-d03b-4422-9f57-5862fcd13490; _ga=GA1.2.1741285320.1590755697; zjs_user_id=null; zjs_anonymous_id=%22d14f0059-d03b-4422-9f57-5862fcd13490%22; __gads=ID=1050523ba93d593d:T=1590755700:S=ALNI_MZlJJ_xqSbd51oJisV_HY4g017Ehw; _gcl_au=1.1.2000298647.1590755705; KruxPixel=true; _fbp=fb.1.1590755705919.1815197270; _pxvid=d6c5ec75-a1a8-11ea-b8a9-0242ac120009; KruxAddition=true; JSESSIONID=3E7EBDB1F8931DF7D0DE9992546AE0B3; zgsession=1|200e23e0-9534-4d27-931f-caa3de6b483b; _gid=GA1.2.1328942480.1590858452; _gat=1; DoubleClickSession=true; GASession=true; _uetsid=fdde22d5-862a-8a7d-93e4-a16c574edf91; _pin_unauth=YzUyOGQ2OGMtMmQ3YS00NGZkLTg3MmEtOGJlODM1YWMwMTA1; _px3=026336d3721eec42bcdec3278ad2d3ac2014d5e65707b21624fb2e743d9a89be:mq3WRz2RNL5PBIvbYNHCxq5VfXHXy2YKC+8Lqn97pIw8MiKppH7Cx7AjKzbAFi1zcehKGY36aIgsnE9NiPKwlw==:1000:4U1o3ogIQ0KzfyMd2QYEFGDnD1augezy5bJlzEn9ZHE89B2uEIxDg8BmsGj8szPwyIz1Yv15S2V0TV5P+0jCFisfGk92XM4DM7K13GCtNr0HXhNGftVBFxVrCv8ApRphw/Qwj7AcagCh9i6FPiQGLFruxVASJXLsNpFeWimekVY=; AWSALB=ZKAGBcH2BwM6D1bRKOPynbOqyclySGz5U/fZB+wO3MYQ91UR9A5rFVtFsmjOkrMASUJguhtsJRZDM7IlBiWVT/pGw2S0BjxgEZmpFPrBZEqU2lWTE2NMArtecZD2; AWSALBCORS=ZKAGBcH2BwM6D1bRKOPynbOqyclySGz5U/fZB+wO3MYQ91UR9A5rFVtFsmjOkrMASUJguhtsJRZDM7IlBiWVT/pGw2S0BjxgEZmpFPrBZEqU2lWTE2NMArtecZD2; search=6|1593450465587%7Crect%3D40.843698984643765%252C-73.50417109960938%252C40.567821651427245%252C-74.45174190039063%26rid%3D6181%26disp%3Dmap%26mdm%3Dauto%26p%3D2%26z%3D0%26lt%3Dfsbo%26fs%3D1%26fr%3D0%26mmm%3D0%26rs%3D0%26ah%3D0%26singlestory%3D0%26housing-connector%3D0%26abo%3D0%26garage%3D0%26pool%3D0%26ac%3D0%26waterfront%3D0%26finished%3D0%26unfinished%3D0%26cityview%3D0%26mountainview%3D0%26parkview%3D0%26waterview%3D0%26hoadata%3D1%26zillow-owned%3D0%263dhome%3D0%09%096181%09%09%09%09%09%09',
-  'sec-fetch-dest': 'document',
-  'sec-fetch-mode': 'navigate',
-  'sec-fetch-site': 'same-origin',
-  'sec-fetch-user': '?1',
-  'upgrade-insecure-requests': '1',
-  'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
-}
 
 class ZillowScraper:
-  def __init__(self, zipCode:str=None):
-    # Use default example if no zipcode is provided
-    if zipCode == None:
-      with open('ExampleResponses/ZipCode_37076.html') as file:
-        soup = BeautifulSoup(file, 'html.parser')
-    else:
-      response = self.GetZillowResponse(zipCode)
-      soup = BeautifulSoup(response.content, 'html.parser')
-    
-    print(soup)
+  header = {
+    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'accept-encoding': 'gzip, deflate, br',
+    'accept-language': 'en-US,en;q=0.9',
+    'cache-control': 'max-age=0',
+    'cookie': 'zguid=24|%24c02c415b-4576-4389-94be-e23c11b18ffa; zgsession=1|169e56d7-e2bd-43af-9c4e-9866ea7ccd57; zjs_anonymous_id=%22c02c415b-4576-4389-94be-e23c11b18ffa%22; zjs_user_id=null; zg_anonymous_id=%2280f2467d-3d8b-4592-adf7-fd20323eeb99%22; _ga=GA1.2.1216532562.1698163414; _gid=GA1.2.2029951140.1698163414; pxcts=e28b86cd-7286-11ee-a8ba-6e800c2813fc; _pxvid=e28b70a3-7286-11ee-a8ba-b3419cc79c66; x-amz-continuous-deployment-state=AYABeDHNAM6iUFGCGI0sw0WuC78APgACAAFEAB1kM2Jsa2Q0azB3azlvai5jbG91ZGZyb250Lm5ldAABRwAVRzA3MjU1NjcyMVRZRFY4RDcyVlpWAAEAAkNEABpDb29raWUAAACAAAAADOQAZYRehRHfkjb%2FsAAwnQHaY4QSweSkEGsegXIi%2FdVHt8mqxDS3%2FTwM1IQUoMiy0l6GLdtjybsUolKVF%2FZEAgAAAAAMAAQAAAAAAAAAAAAAAAAAALZ94DCgc4CATmeo7z%2F86xb%2F%2F%2F%2F%2FAAAAAQAAAAAAAAAAAAAAAQAAAAxEZY03Pz0VyvEa%2FE3HMhpLFiYvrtYasKi68hnr; _gcl_au=1.1.1857945718.1698163416; DoubleClickSession=true; __pdst=6cd7d6b392384405ae770919ec731f62; _pin_unauth=dWlkPU4yVmtOMlZsTXpBdE5ETTNPQzAwTURVekxXRTBabVF0WVRBME5UUTJObUl4WmpaaQ; _cs_c=0; _cs_id=783c21ae-d902-a9fa-fe4a-21f24a10e719.1698163531.2.1698165979.1698165970.1.1732327531000; FSsampler=918145208; _clck=a0wk5j|2|fg5|0|1392; _pxff_tm=1; _hp2_id.1215457233=%7B%22userId%22%3A%227540853962200912%22%2C%22pageviewId%22%3A%227252990841852008%22%2C%22sessionId%22%3A%228328645617928294%22%2C%22identity%22%3Anull%2C%22trackerVersion%22%3A%224.0%22%7D; _hp2_ses_props.1215457233=%7B%22ts%22%3A1698272685891%2C%22d%22%3A%22www.zillow.com%22%2C%22h%22%3A%22%2F%22%7D; JSESSIONID=8802E3C43FA4EB8EC66D0B2ED373C6A0; g_state={"i_p":1698877494923,"i_l":3}; _gat=1; _pxff_cc=U2FtZVNpdGU9TGF4Ow==; _pxff_cfp=1; _pxff_bsco=1; AWSALB=gkmoKaeQUU4X4inRe9hvUqaC7+OK68nLNpU2g7vCCz/4Wqa9lwz7HCBUr8F/irSDstjOZ8PFtA6B3eInhpRiRjpOCh0YeL530HUwkcItvdOTluFOvgsopbR98jNt; AWSALBCORS=gkmoKaeQUU4X4inRe9hvUqaC7+OK68nLNpU2g7vCCz/4Wqa9lwz7HCBUr8F/irSDstjOZ8PFtA6B3eInhpRiRjpOCh0YeL530HUwkcItvdOTluFOvgsopbR98jNt; search=6|1700864890043%7Crect%3D36.85589814914472%252C-86.356778703125%252C35.52485876134722%252C-87.213712296875%26rid%3D6118%26disp%3Dmap%26mdm%3Dauto%26p%3D1%26z%3D1%26listPriceActive%3D1%26fs%3D0%26fr%3D1%26mmm%3D0%26rs%3D0%26ah%3D0%26singlestory%3D0%26housing-connector%3D0%26abo%3D0%26garage%3D0%26pool%3D0%26ac%3D0%26waterfront%3D0%26finished%3D0%26unfinished%3D0%26cityview%3D0%26mountainview%3D0%26parkview%3D0%26waterview%3D0%26hoadata%3D1%26zillow-owned%3D0%263dhome%3D0%26featuredMultiFamilyBuilding%3D0%26excludeNullAvailabilityDates%3D0%26commuteMode%3Ddriving%26commuteTimeOfDay%3Dnow%09%096118%09%7B%22isList%22%3Atrue%2C%22isMap%22%3Atrue%7D%09%09%09%09%09; _px3=fb5b8c1aeabe138bd069efd2e04f97e1d86261a9e740491a8278f137b3f29f3c:uSLJrY4z+/Y0+JyeTMUn0AFFwAMRBo0p25ebOhwkC4dvi8lsTbjYDU+QwNb9Fagp6LAEAvdBvZ0yL+c7cEAqCQ==:1000:EM7QRQW+3tjt43cbXrpzSg7CWYvwHKq9z/JtWDr97WNLiqvpTrdLdgmXocKwNWT46mR1sTF7uNwqFjD2kZ2IqkrIh1jdPqiveplWQkKYRf9qOsSeTwlHheIugbFkWaT3FcDGVfwKu8V8ge9LvivjHFIVQbiK82DRlhPc/DgZPGbe+b3s+A44MXHB33UvXBtooXFZAyvmpmWsRCoPiMycwBQvCsy+4YbfPJXeMRYOCSk=; _uetsid=e354adc0728611ee96177d94a8663afd; _uetvid=b3108c10a4b511ed9117bd9dbe7780dc; _derived_epik=dj0yJnU9eVdBbk9RamFTZlFKQWRYU2N0VWM0MmRnb3N5dlR3eTQmbj1meTlZSUdmVmFOWWVFUHVuVUw2TmJBJm09MSZ0PUFBQUFBR1U1bG53JnJtPTEmcnQ9QUFBQUFHVTVsbncmc3A9Mg; _clsk=1cvcko0|1698272893199|8|0|s.clarity.ms/collect',
+    'sec-fetch-dest': 'document',
+    'sec-fetch-mode': 'navigate',
+    'sec-fetch-site': 'same-origin',
+    'sec-fetch-user': '?1',
+    'upgrade-insecure-requests': '1',
+    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+  }
 
+  filters = {
+    "isForSaleForeclosure": {"value": False},
+    "isMultiFamily": {"value": False},
+    "isAllHomes": {"value": True},
+    "isAuction": {"value": False},
+    "isNewConstruction": {"value": False},
+    "isForRent": {"value": True},
+    "isLotLand": {"value": False},
+    "isManufactured": {"value": False},
+    "isForSaleByOwner": {"value": False},
+    "isComingSoon": {"value": False},
+    "isForSaleByAgent": {"value": False},
+  }
 
-  def GetZillowResponse(self, zipCode):
+  def __init__(self, zipCode:str):
+    self.zipCode = zipCode
+    self.queryData = self.GetQueryData(self.zipCode)
+    self.listings = self.GetListings(self.queryData)
+    print(json.dumps(self.listings, indent=2))
+    print(f"found {len(self.listings)} property results")
+
+  
+  def GetQueryData(self, zipCode:str):
     url = f'https://www.zillow.com/homes/for_rent/{zipCode}_rb/'
+    response = self.GetZillowResponse(url)
+    soup = BeautifulSoup(response.content, 'html.parser')
+
+    mapBounds = re.findall(r'("mapBounds":\{[^}]+\})', str(soup))[0]
+    mapBounds = f"{{{mapBounds}}}"
+    
+    queryData = json.loads(mapBounds)
+    queryData["filterState"] = self.filters
+
+    return queryData
+  
+
+  def GetListings(self, queryData:dict):
+    parameters = {
+        "searchQueryState": {
+            "pagination": {},
+            "usersSearchTerm": "Nashville, TN",
+            "mapBounds": queryData["mapBounds"],
+            "filterState": queryData["filterState"]
+        },
+        "wants": {
+            "cat1": ["listResults", "mapResults"], "cat2": ["total"]
+        },
+        "requestId": randint(2, 10),
+    }
+    
+    url = "https://www.zillow.com/search/GetSearchPageState.htm?"
+    url += urlencode(parameters)
+    response = self.GetZillowResponse(url)
+    listings = response.json()["cat1"]["searchResults"]["mapResults"]
+    return listings
+
+
+  def GetZillowResponse(self, url):
     with requests.Session() as session:
-      response = session.get(url, headers=requestHeader)
+      response = session.get(url, headers=self.header)
     
     if response.status_code != 200:
       raise ValueError('GET request failed')
@@ -47,7 +94,5 @@ class ZillowScraper:
 
 
 if __name__ == '__main__':
-  zipCode = '37076'
-
+  zipCode = '37920'
   zs = ZillowScraper(zipCode)
-  # zs = ZillowScraper()
