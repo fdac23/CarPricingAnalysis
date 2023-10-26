@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import re
+import csv
 import json
 import requests
+import pandas as pd
 from random import randint
 from bs4 import BeautifulSoup
 from urllib.parse import quote
@@ -40,11 +42,20 @@ class ZillowScraper:
   }
 
   def __init__(self, zipCode:str):
+    df = pd.read_csv('ValidZipCodes.csv', converters={'DELIVERY ZIPCODE':str})
+    self.validZipCodes = list(df['DELIVERY ZIPCODE'])
     self.zipCode = zipCode
-    self.queryData = self.GetQueryData(self.zipCode)
+
+    if self.zipCode not in self.validZipCodes:
+      raise ValueError('Invalid Zip-Code')
+    else:
+      self.ScrapeZipcodeListings(self.zipCode)
+    
+    
+  def ScrapeZipcodeListings(self, zipCode:str):
+    self.queryData = self.GetQueryData(zipCode)
     self.listings = self.GetListings(self.queryData)
-    print(json.dumps(self.listings, indent=2))
-    print(f"found {len(self.listings)} property results")
+    self.ParseListings(self.listings)
 
   
   def GetQueryData(self, zipCode:str):
@@ -82,7 +93,7 @@ class ZillowScraper:
     return listings
 
 
-  def GetZillowResponse(self, url):
+  def GetZillowResponse(self, url:str):
     with requests.Session() as session:
       response = session.get(url, headers=self.header)
     
@@ -90,9 +101,66 @@ class ZillowScraper:
       raise ValueError('GET request failed')
     else:
       return response
+  
+
+  def ParseListings(self, listings):    
+    csvFile = 'Listings.csv'
+    f = open(csvFile, 'w')
+    writeFile = csv.writer(f)
+    writeFile.writerow(['latitude', 'longitude', 'price', 'numBeds', 'numBaths', 'area', 'address', 'timeOnZillow', 'detailURL'])
+    
+    for listing in listings:
+      if listing['statusType'] == 'FOR_RENT':
+        if 'latLong' in listing.keys():
+          latitude = listing['latLong']['latitude']
+          longitude = listing['latLong']['longitude']
+        else:
+          latitude = None
+          longitude = None
+
+        if 'minBeds' in listing.keys():
+          numBeds = listing['minBeds']
+        elif 'beds' in listing.keys():
+          numBeds = listing['beds']
+        elif ('hdpData' in listing.keys()) and ('homeInfo' in listing['hdpData'].keys()) and ('bedrooms' in listing['hdpData']['homeInfo'].keys()):
+          numBeds = listing['hdpData']['homeInfo']['bedrooms']
+        else:
+          numBeds = None
+
+        if 'minBaths' in listing.keys():
+          numBaths = listing['minBaths']
+        elif 'baths' in listing.keys():
+          numBaths = listing['baths']
+        elif ('hdpData' in listing.keys()) and ('homeInfo' in listing['hdpData'].keys()) and ('bathrooms' in listing['hdpData']['homeInfo'].keys()):
+          numBaths = listing['hdpData']['homeInfo']['bathrooms']
+        else:
+          numBaths = None
+
+        if 'minArea' in listing.keys():
+          area = listing['minArea']
+        elif 'area' in listing.keys():
+          area = listing['area']
+        elif ('hdpData' in listing.keys()) and ('homeInfo' in listing['hdpData'].keys()) and ('livingArea' in listing['hdpData']['homeInfo'].keys()):
+          area = listing['hdpData']['homeInfo']['livingArea']
+        else:
+          area = None
+        
+        if 'address' in listing.keys():
+          address = listing['address']
+        elif ('hdpData' in listing.keys()) and ('homeInfo' in listing['hdpData'].keys()) and ('streetAddress' in listing['hdpData']['homeInfo'].keys()):
+          address = listing['hdpData']['homeInfo']['streetAddress']
+        else:
+          address = None
+
+        price = listing['price'] if 'price' in listing.keys() else None
+        timeOnZillow = listing['timeOnZillow'] if 'timeOnZillow' in listing.keys() else None
+        detailURL = listing['detailUrl'] if 'detailUrl' in listing.keys() else None
+
+        writeFile.writerow([latitude, longitude, price, numBeds, numBaths, area, address, timeOnZillow, detailURL])
 
 
 
 if __name__ == '__main__':
   zipCode = '37920'
+  # zipCode = '123'
   zs = ZillowScraper(zipCode)
