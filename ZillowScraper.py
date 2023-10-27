@@ -41,21 +41,28 @@ class ZillowScraper:
     "isForSaleByAgent": {"value": False},
   }
 
-  def __init__(self, zipCode:str):
+  def __init__(self, zipCodes:list[str]):
     df = pd.read_csv('ValidZipCodes.csv', converters={'DELIVERY ZIPCODE':str})
     self.validZipCodes = list(df['DELIVERY ZIPCODE'])
-    self.zipCode = zipCode
+    
+    for zipCode in zipCodes:
+      if zipCode not in self.validZipCodes:
+        raise ValueError(f'Invalid Zip-Code: {zipCode}')
+    
+    csvFile = 'Listings.csv'
+    with open(csvFile, 'w') as f:
+      writeFile = csv.writer(f)
+      writeFile.writerow(['zipCode', 'latitude', 'longitude', 'price', 'numBeds', 'numBaths', 'area', 'address', 'timeOnZillow', 'detailURL'])
 
-    if self.zipCode not in self.validZipCodes:
-      raise ValueError('Invalid Zip-Code')
-    else:
-      self.ScrapeZipcodeListings(self.zipCode)
+    self.zipCodes = zipCodes
+    self.ScrapeZipcodeListings(self.zipCodes)
     
     
-  def ScrapeZipcodeListings(self, zipCode:str):
-    self.queryData = self.GetQueryData(zipCode)
-    self.listings = self.GetListings(self.queryData)
-    self.ParseListings(self.listings)
+  def ScrapeZipcodeListings(self, zipCodes:list[str]):
+    for zipCode in zipCodes:
+      queryData = self.GetQueryData(zipCode)
+      listings = self.GetListings(queryData)
+      self.ParseListings(listings, zipCode)
 
   
   def GetQueryData(self, zipCode:str):
@@ -103,11 +110,10 @@ class ZillowScraper:
       return response
   
 
-  def ParseListings(self, listings):    
+  def ParseListings(self, listings:list[dict], zipCode:str):    
     csvFile = 'Listings.csv'
-    f = open(csvFile, 'w')
+    f = open(csvFile, 'a')
     writeFile = csv.writer(f)
-    writeFile.writerow(['latitude', 'longitude', 'price', 'numBeds', 'numBaths', 'area', 'address', 'timeOnZillow', 'detailURL'])
     
     for listing in listings:
       if listing['statusType'] == 'FOR_RENT':
@@ -156,11 +162,11 @@ class ZillowScraper:
         timeOnZillow = listing['timeOnZillow'] if 'timeOnZillow' in listing.keys() else None
         detailURL = listing['detailUrl'] if 'detailUrl' in listing.keys() else None
 
-        writeFile.writerow([latitude, longitude, price, numBeds, numBaths, area, address, timeOnZillow, detailURL])
+        writeFile.writerow([zipCode, latitude, longitude, price, numBeds, numBaths, area, address, timeOnZillow, detailURL])
 
 
 
 if __name__ == '__main__':
-  zipCode = '37920'
-  # zipCode = '123'
-  zs = ZillowScraper(zipCode)
+  zipCodes = ['37920', '37076']
+  # zipCodes = ['37920', '123']
+  zs = ZillowScraper(zipCodes)
