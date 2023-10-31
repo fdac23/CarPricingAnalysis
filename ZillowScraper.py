@@ -158,11 +158,17 @@ class ZillowScraper:
         else:
           address = None
 
-        price = listing['price'] if 'price' in listing.keys() else None
+        if 'price' in listing.keys():
+          price = listing['price']
+          price = re.sub('[^0-9,]', "", price).replace(",", "")
+          price = float(price)
+        else:
+          price = None
+        
         timeOnZillow = listing['timeOnZillow'] if 'timeOnZillow' in listing.keys() else None
         detailURL = listing['detailUrl'] if 'detailUrl' in listing.keys() else None
 
-        writeFile.writerow([zipCode, latitude, longitude, price, numBeds, numBaths, area, address, timeOnZillow, detailURL])
+        writeFile.writerow([str(zipCode), latitude, longitude, price, numBeds, numBaths, area, address, timeOnZillow, detailURL])
 
 
 
