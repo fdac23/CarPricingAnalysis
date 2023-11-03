@@ -9,7 +9,7 @@ from random import randint
 from bs4 import BeautifulSoup
 from urllib.parse import quote
 from urllib.parse import urlencode
-
+from ZillowSession import Zillow_Session
 
 
 class ZillowScraper:
@@ -44,11 +44,13 @@ class ZillowScraper:
   def __init__(self, zipCodes:list[str]):
     df = pd.read_csv('ValidZipCodes.csv', converters={'DELIVERY ZIPCODE':str})
     self.validZipCodes = list(df['DELIVERY ZIPCODE'])
-    
+
     for zipCode in zipCodes:
       if zipCode not in self.validZipCodes:
         raise ValueError(f'Invalid Zip-Code: {zipCode}')
-    
+
+    self.z_session = Zillow_Session('http_proxies.txt')
+
     csvFile = 'Listings.csv'
     with open(csvFile, 'w') as f:
       writeFile = csv.writer(f)
@@ -67,7 +69,7 @@ class ZillowScraper:
   
   def GetQueryData(self, zipCode:str):
     url = f'https://www.zillow.com/homes/for_rent/{zipCode}_rb/'
-    response = self.GetZillowResponse(url)
+    response = self.z_session.get(url, header=self.header)
     soup = BeautifulSoup(response.content, 'html.parser')
 
     mapBounds = re.findall(r'("mapBounds":\{[^}]+\})', str(soup))[0]
@@ -95,7 +97,7 @@ class ZillowScraper:
     
     url = "https://www.zillow.com/search/GetSearchPageState.htm?"
     url += urlencode(parameters)
-    response = self.GetZillowResponse(url)
+    response = self.z_session.get(url, header=self.header)
     listings = response.json()["cat1"]["searchResults"]["mapResults"]
     return listings
 
@@ -168,5 +170,4 @@ class ZillowScraper:
 
 if __name__ == '__main__':
   zipCodes = ['37920', '37076']
-  # zipCodes = ['37920', '123']
   zs = ZillowScraper(zipCodes)
