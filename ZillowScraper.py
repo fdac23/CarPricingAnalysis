@@ -11,6 +11,7 @@ from urllib.parse import quote
 from urllib.parse import urlencode
 from ZillowSession import Zillow_Session
 
+from backend import addToMongo
 
 class ZillowScraper:
   header = {
@@ -170,7 +171,21 @@ class ZillowScraper:
         timeOnZillow = listing['timeOnZillow'] if 'timeOnZillow' in listing.keys() else None
         detailURL = listing['detailUrl'] if 'detailUrl' in listing.keys() else None
 
-        writeFile.writerow([str(zipCode), latitude, longitude, price, numBeds, numBaths, area, address, timeOnZillow, detailURL])
+        # writeFile.writerow([str(zipCode), latitude, longitude, price, numBeds, numBaths, area, address, timeOnZillow, detailURL])
+        data = {
+          'zipCode': str(zipCode),
+          'latitude': latitude,
+          'longitude': longitude,
+          'price': price,
+          'numBeds': numBeds,
+          'numBaths': numBaths,
+          'area': area,
+          'address': address,
+          'timeOnZillow': timeOnZillow,
+          'detailURL': detailURL
+        }
+
+        addToMongo(str(zipCode), data)
 
 
 
