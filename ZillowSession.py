@@ -1,10 +1,21 @@
 import requests 
 
 class Zillow_Session():
-	def __init__(self, proxy_file:str):
+	def __init__(self, proxy_file:str = ''):
 		self.session = requests.Session()
-		self.proxy_list = set(open(proxy_file, "r").read().strip().split("\n"))
+		self.proxy_list = set(open(proxy_file, "r").read().strip().split("\n")) if proxy_file != '' else self.request_proxies_list()
 		self.working = set()
+
+	def request_proxies_list(self):
+			print('getting a list of proxies')
+			try:
+				response = self.session.get("https://api.proxyscrape.com/v2/", params={'request':'displayproxies','protocol':'http','timeout':10000,'country':'all','ssl':'all','anonymity':'all'}, timeout=30)
+			except Exception as e:
+				print('API failed... could not get proxy list')
+				return None
+			response = response.content.decode('utf-8').strip().split('\r\n')
+			print(len(response), 'proxies found')
+			return response
 
 	def get_proxy(self):
 		if len(self.proxy_list) != 0:
@@ -44,14 +55,14 @@ class Zillow_Session():
 		return proxy
 
 	# performs a get request with the given url and proxy
-	def get(self, url:str, header:dict(), proxy='', attempts=5):
+	def get(self, url:str, header:dict()={}, params:dict()={}, proxy='', attempts=5):
 		# if proxy not provided get one
 		if proxy == '':
 			proxy = self.provide_proxy()
 
 		while True:
 			try:
-				response = self.session.get(url, proxies={'http': f"http://{proxy}"}, timeout=30, headers=header)
+				response = self.session.get(url, proxies={'http': f"http://{proxy}"}, timeout=30, headers=header, params=params)
 				break
 			except Exception as e:
 				if attempts <= 0:
@@ -77,6 +88,6 @@ if '__main__' in __name__:
     'upgrade-insecure-requests': '1',
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
   }
-	z_session = Zillow_Session('./http_proxies.txt')
+	z_session = Zillow_Session('')
 	zipCode = '37916'
 	print(z_session.get(f'https://www.zillow.com/homes/for_rent/{zipCode}_rb/', header))
