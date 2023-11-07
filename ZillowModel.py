@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import re
 import numpy as np
 import pandas as pd
@@ -23,20 +25,22 @@ def RMSE(y_true, y_pred):
   return K.sqrt(K.mean(K.square(y_pred - y_true)))
 
 class ZillowModel():
-  def __init__(self, zipCode:str):
+  def __init__(self, zipCodes:list[str]):
     df = pd.read_csv('ValidZipCodes.csv', converters={'DELIVERY ZIPCODE':str})
     validZipCodes = list(df['DELIVERY ZIPCODE'])
-    if zipCode not in validZipCodes:
-      raise ValueError(f'Invalid Zip-Code: {zipCode}')
+    
+    for zipCode in zipCodes:
+      if zipCode not in validZipCodes:
+        raise ValueError(f'Invalid Zip-Code: {zipCode}')
 
-    df = self.GetData(zipCode)
+    df = self.GetData(zipCodes)
     self.TrainModel(df, showLoss=True)
 
   
-  def GetData(self, zipCode:str):
+  def GetData(self, zipCodes:list[str]):
     df = pd.read_csv('Listings.csv', converters={'zipCode':str})
-    df = df[df['zipCode'] == zipCode]
-    df = df.drop(['zipCode', 'address', 'timeOnZillow', 'detailURL'], axis=1)
+    df = df[df['zipCode'].isin(zipCodes)]
+    df = df.drop(['latitude', 'longitude', 'address', 'timeOnZillow', 'detailURL'], axis=1)
     df = df.dropna()
     return df
   
@@ -47,9 +51,10 @@ class ZillowModel():
     X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=32)
 
     self.transformer = make_column_transformer(
-      (MinMaxScaler(), ['latitude', 'longitude', 'numBeds', 'numBaths', 'area'])
+      (OneHotEncoder(), ['zipCode']),
+      (MinMaxScaler(), ['numBeds', 'numBaths', 'area'])
     )
-
+    
     self.transformer.fit(X_train)
     X_train = self.transformer.transform(X_train)
     X_test = self.transformer.transform(X_test)
@@ -92,9 +97,9 @@ class ZillowModel():
   
 
   def ModelPredict(self, params):
-    col_values = ['latitude', 'longitude', 'numBeds', 'numBaths', 'area']
+    col_values = ['zipCode', 'numBeds', 'numBaths', 'area']
     
-    inputs = [params['latitude'], params['longitude'], params['numBeds'], params['numBaths'], params['area']]
+    inputs = [str(params['zipCode']), params['numBeds'], params['numBaths'], params['area']]
     inputs = np.array(inputs).reshape(1, -1)
     inputs = pd.DataFrame(data=inputs, columns=col_values)
     inputs = self.transformer.transform(inputs)
@@ -105,5 +110,15 @@ class ZillowModel():
 
 
 if __name__ == '__main__':
-  zipCodes = '37920'
+  zipCodes = ['37920']
   zm = ZillowModel(zipCodes)
+  
+  inputs = {
+    'zipCode':37920,
+    'numBeds':1,
+    'numBaths':1, 
+    'area':750
+  }
+
+  pred = zm.ModelPredict(inputs)
+  print(pred)
