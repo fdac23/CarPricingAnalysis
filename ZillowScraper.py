@@ -60,7 +60,9 @@ class ZillowScraper:
     self.client = MongoClient (MONGO_URI)
     self.db = self.client ['zipCodes']
 
-    self.zipCodes = zipCodes
+    notInMongo = self.CheckIfInMongo(zipCodes)
+
+    self.zipCodes = notInMongo
     self.ScrapeZipcodeListings(self.zipCodes)
   
   def AddToMongo(self, zipCode, data):
@@ -74,6 +76,8 @@ class ZillowScraper:
     for zipCode in zipCodes:
       if (zipCode not in collections):
         doesNotExsist.append(zipCode)
+      else:
+        print('zipCode already in database: ', zipCode)
       
     return doesNotExsist
     
