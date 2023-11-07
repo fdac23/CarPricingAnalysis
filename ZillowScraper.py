@@ -11,7 +11,12 @@ from urllib.parse import quote
 from urllib.parse import urlencode
 from ZillowSession import Zillow_Session
 
-from backend import addToMongo
+from pymongo.mongo_client import MongoClient
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+MONGO_URI = os.getenv('MONGO_URI')
 
 class ZillowScraper:
   header = {
@@ -50,15 +55,27 @@ class ZillowScraper:
       if zipCode not in self.validZipCodes:
         raise ValueError(f'Invalid Zip-Code: {zipCode}')
 
-    self.z_session = Zillow_Session('http_proxies.txt')
+    self.z_session = Zillow_Session('')
 
-    csvFile = 'Listings.csv'
-    with open(csvFile, 'w') as f:
-      writeFile = csv.writer(f)
-      writeFile.writerow(['zipCode', 'latitude', 'longitude', 'price', 'numBeds', 'numBaths', 'area', 'address', 'timeOnZillow', 'detailURL'])
+    self.client = MongoClient (MONGO_URI)
+    self.db = self.client ['zipCodes']
 
     self.zipCodes = zipCodes
     self.ScrapeZipcodeListings(self.zipCodes)
+  
+  def AddToMongo(self, zipCode, data):
+    coll = self.db [zipCode]
+    coll.insert_one(data)
+
+  def CheckIfInMongo(self, zipCodes):
+    doesNotExsist = []
+    collections = self.db.list_collection_names()
+    
+    for zipCode in zipCodes:
+      if (zipCode not in collections):
+        doesNotExsist.append(zipCode)
+      
+    return doesNotExsist
     
     
   def ScrapeZipcodeListings(self, zipCodes:list[str]):
@@ -185,7 +202,7 @@ class ZillowScraper:
           'detailURL': detailURL
         }
 
-        addToMongo(str(zipCode), data)
+        self.AddToMongo(str(zipCode), data)
 
 
 
