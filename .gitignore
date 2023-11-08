@@ -160,7 +160,7 @@ cython_debug/
 #.idea/
 
 # datafiles
-*.csv
-*.txt
+# *.csv
+# *.txt
 
 .DS_Store

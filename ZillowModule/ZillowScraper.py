@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import re
 import csv
 import json
@@ -9,14 +10,16 @@ from random import randint
 from bs4 import BeautifulSoup
 from urllib.parse import quote
 from urllib.parse import urlencode
-from ZillowSession import Zillow_Session
-
-from pymongo.mongo_client import MongoClient
 from dotenv import load_dotenv
-import os
+from pymongo.mongo_client import MongoClient
+
+from ZillowModule import ValidZipCodesPath
+from ZillowModule.ZillowSession import ZillowSession
+
 
 load_dotenv()
 MONGO_URI = os.getenv('MONGO_URI')
+
 
 class ZillowScraper:
   header = {
@@ -48,26 +51,26 @@ class ZillowScraper:
   }
 
   def __init__(self, zipCodes:list[str]):
-    df = pd.read_csv('ValidZipCodes.csv', converters={'DELIVERY ZIPCODE':str})
+    # df = pd.read_csv('ValidZipCodes.csv', converters={'DELIVERY ZIPCODE':str})
+    df = pd.read_csv(ValidZipCodesPath, converters={'DELIVERY ZIPCODE':str})
     self.validZipCodes = list(df['DELIVERY ZIPCODE'])
 
     for zipCode in zipCodes:
       if zipCode not in self.validZipCodes:
         raise ValueError(f'Invalid Zip-Code: {zipCode}')
 
-    self.z_session = Zillow_Session('')
+    self.z_session = ZillowSession()
+    self.client = MongoClient(MONGO_URI)
+    self.db = self.client['zipCodes']
 
-    self.client = MongoClient (MONGO_URI)
-    self.db = self.client ['zipCodes']
-
-    notInMongo = self.CheckIfInMongo(zipCodes)
-
-    self.zipCodes = notInMongo
-    self.ScrapeZipcodeListings(self.zipCodes)
+    zipCodesToScrape = self.CheckIfInMongo(zipCodes)
+    self.ScrapeZipcodeListings(zipCodesToScrape)
   
+
   def AddToMongo(self, zipCode, data):
-    coll = self.db [zipCode]
+    coll = self.db[zipCode]
     coll.insert_one(data)
+
 
   def CheckIfInMongo(self, zipCodes):
     doesNotExsist = []
@@ -122,23 +125,9 @@ class ZillowScraper:
     response = self.z_session.get(url, header=self.header)
     listings = response.json()["cat1"]["searchResults"]["mapResults"]
     return listings
-
-
-  def GetZillowResponse(self, url:str):
-    with requests.Session() as session:
-      response = session.get(url, headers=self.header)
-    
-    if response.status_code != 200:
-      raise ValueError('GET request failed')
-    else:
-      return response
   
 
-  def ParseListings(self, listings:list[dict], zipCode:str):    
-    csvFile = 'Listings.csv'
-    f = open(csvFile, 'a')
-    writeFile = csv.writer(f)
-    
+  def ParseListings(self, listings:list[dict], zipCode:str):
     for listing in listings:
       if listing['statusType'] == 'FOR_RENT':
         if 'latLong' in listing.keys():
@@ -192,7 +181,6 @@ class ZillowScraper:
         timeOnZillow = listing['timeOnZillow'] if 'timeOnZillow' in listing.keys() else None
         detailURL = listing['detailUrl'] if 'detailUrl' in listing.keys() else None
 
-        # writeFile.writerow([str(zipCode), latitude, longitude, price, numBeds, numBaths, area, address, timeOnZillow, detailURL])
         data = {
           'zipCode': str(zipCode),
           'latitude': latitude,

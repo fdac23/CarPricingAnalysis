@@ -1,0 +1,331 @@
+zipCode,latitude,longitude,price,numBeds,numBaths,area,address,timeOnZillow,detailURL
+37920,35.961002,-83.90532,1750.0,1,1.0,750,"906 Waterfront Dr, Knoxville, TN",73987291,/apartments/knoxville-tn/south-banks-at-suttree-landing/BtBhVS/
+37920,35.948296,-83.98538,1389.0,1,1.0,645,"800 Longview Rd, Knoxville, TN",975162664,/apartments/knoxville-tn/crestridge/5XqjXV/
+37920,35.967197,-83.91735,1692.0,0,1.0,500,"300 State St, Knoxville, TN",528603303,/apartments/knoxville-tn/marble-alley-lofts/63Pyy3/
+37920,35.9617,-83.92088,1505.0,0,1.0,463,"700 Henley St SW, Knoxville, TN",507284589,/apartments/knoxville-tn/church-and-henley/C4QvgJ/
+37920,35.954903,-83.91602,1948.0,1,1.0,640,"221 E Blount Ave, Knoxville, TN",1211387514,/apartments/knoxville-tn/one-riverwalk/BKB5H2/
+37920,35.95495,-83.91577,1848.0,1,1.0,640,"221 E Blount Ave, Knoxville, TN",1720492138,/apartments/knoxville-tn/one-riverwalk/BKB5H2/
+37920,35.932896,-83.96125,1375.0,1,1.0,828,"3636 Taliluna Ave, Knoxville, TN",1829638026,/b/sequoyah-square-condominiums-knoxville-tn-5Xwnxt/
+37920,35.90484,-83.99423,2400.0,3,2.0,1540,"1731 Polkwright Ln, Knoxville, TN 37919",423342204,/homedetails/1731-Polkwright-Ln-Knoxville-TN-37919/41693660_zpid/
+37920,35.9209,-83.94865,2950.0,3,2.5,2314,"2338 Birch Hollow Ln, Knoxville, TN 37920",683763958,/homedetails/2338-Birch-Hollow-Ln-Knoxville-TN-37920/2056063466_zpid/
+37920,35.967525,-83.919014,3200.0,4,3.0,2653,"9706 Fire Tower Ln, Knoxville, TN 37922",852543767,/homedetails/9706-Fire-Tower-Ln-Knoxville-TN-37922/331312685_zpid/
+37920,35.85118,-83.69631,3600.0,3,3.0,2500,"12846 Chapman Hwy, Seymour, TN 37865",7333030994,/homedetails/12846-Chapman-Hwy-Seymour-TN-37865/42487844_zpid/
+37920,35.88753,-83.75043,1100.0,1,1.0,700,"551 S Old Sevierville Pike, Seymour, TN 37865",7734384,/b/551-s-old-sevierville-pike-seymour-tn-9QfdWH/
+37920,35.927094,-83.81696,2250.0,3,2.5,1378,"7223 Sunset Ridge Ln, Knoxville, TN 37920",19225938,/homedetails/7223-Sunset-Ridge-Ln-Knoxville-TN-37920/121116169_zpid/
+37920,35.95522,-83.89187,3000.0,3,2.0,,"1725 Lenland Ave, Knoxville, TN 37920",378593238,/homedetails/1725-Lenland-Ave-Knoxville-TN-37920/41669343_zpid/
+37920,35.91492,-83.91288,1800.0,2,1.0,1200,"941 Brown Rd, Knoxville, TN 37920",1564913458,/homedetails/941-Brown-Rd-Knoxville-TN-37920/41694764_zpid/
+37920,35.85751,-83.95542,1450.0,2,2.5,1523,"936 Warrior Hill Dr #1, Louisville, TN 37777",397051852,/homedetails/936-Warrior-Hill-Dr-1-Louisville-TN-37777/2071166014_zpid/
+37920,35.953613,-83.89722,1695.0,3,2.0,960,"1321 Baker Ave, Knoxville, TN 37920",1108564032,/homedetails/1321-Baker-Ave-Knoxville-TN-37920/41669205_zpid/
+37920,35.857468,-83.95538,1450.0,2,2.5,1423,"934 Warrior Hill Dr #1, Louisville, TN 37777",609392915,/homedetails/934-Warrior-Hill-Dr-1-Louisville-TN-37777/2071166054_zpid/
+37920,35.856987,-83.95499,1450.0,2,2.5,1518,"916 Warrior Hill Dr #1, Louisville, TN 37777",688533162,/homedetails/916-Warrior-Hill-Dr-1-Louisville-TN-37777/2068787878_zpid/
+37920,35.9221,-83.89279,1650.0,3,1.0,1008,"320 Beechwood Dr, Knoxville, TN 37920",112308013,/homedetails/320-Beechwood-Dr-Knoxville-TN-37920/116205036_zpid/
+37920,35.887497,-83.79079,2400.0,2,2.5,1100,"1909 Foggy Bottom St, Knoxville, TN",361752118,"/b/Knoxville-TN/35.887497,-83.79079_ll/"
+37920,35.94962,-83.99374,1797.0,2,2.5,1130,"4913 Azalea Dr, Knoxville, TN 37909",429636511,/homedetails/4913-Azalea-Dr-Knoxville-TN-37909/41666815_zpid/
+37920,35.932724,-83.9621,1600.0,2,1.5,1280,"3648 Taliluna Ave SW, Knoxville, TN 37919",2606471463,/homedetails/3648-Taliluna-Ave-SW-Knoxville-TN-37919/2055545100_zpid/
+37920,35.95961,-83.97957,995.0,1,1.0,490,"1727 Kim Watt Dr #1727-C, Knoxville, TN 37909",1156184975,/b/01727k-knoxville-tn-9F2FMZ/
+37920,35.94753,-83.98263,1595.0,3,2.0,1054,"606 Renford Rd, Knoxville, TN 37919",341654142,/homedetails/606-Renford-Rd-Knoxville-TN-37919/41666610_zpid/
+37920,35.886925,-83.90403,2400.0,3,1.0,1596,"7300 Rule Rd, Knoxville, TN 37920",2256364157,/homedetails/7300-Rule-Rd-Knoxville-TN-37920/98893989_zpid/
+37920,35.860634,-83.98134,1350.0,2,1.0,750,"1540 E Old Topside Rd #507, Louisville, TN 37777",489649396,/b/avalon-apartments-louisville-tn-65dnJx/
+37920,35.859737,-83.98023,1350.0,2,1.0,750,"1540 E Old Topside Rd #503, Louisville, TN 37777",2910487291,/b/avalon-apartments-louisville-tn-65dnJx/
+37920,35.90633,-83.86388,1915.0,3,2.0,1365,"629 Liverpool Ln, Knoxville, TN 37920",1419267,/homedetails/629-Liverpool-Ln-Knoxville-TN-37920/70942320_zpid/
+37920,35.929115,-83.86032,1500.0,2,1.0,1100,"1110 McCall Ln, Knoxville, TN 37920",545976708,/homedetails/1110-McCall-Ln-Knoxville-TN-37920/2099482236_zpid/
+37920,35.89607,-83.935974,1995.0,3,2.0,1240,"2716 Peterson Ln, Knoxville, TN 37920",1293188613,/homedetails/2716-Peterson-Ln-Knoxville-TN-37920/41694525_zpid/
+37920,35.856735,-83.95578,1450.0,2,2.5,1228,"919 Warrior Hill Dr #1, Louisville, TN 37777",2952724530,/homedetails/919-Warrior-Hill-Dr-1-Louisville-TN-37777/2069787153_zpid/
+37920,35.949234,-83.87965,1690.0,2,1.0,900,"2242 Price Ave, Knoxville, TN",3506923371,/b/2242-price-ave-knoxville-tn-9F2mvx/
+37920,35.91737,-83.82513,1600.0,2,2.0,997,"7404 Creek Song Ct, Knoxville, TN 37920",798045874,/homedetails/7404-Creek-Song-Ct-Knoxville-TN-37920/55215404_zpid/
+37920,35.870907,-83.790695,2295.0,4,3.0,2200,"806 Oliver Ave, Seymour, TN 37865",112270191,/homedetails/806-Oliver-Ave-Seymour-TN-37865/40806718_zpid/
+37920,35.95712,-83.95341,1500.0,2,1.0,754,"2844 Brock Ave, Knoxville, TN 37919",1751046608,/homedetails/2844-Brock-Ave-Knoxville-TN-37919/41654885_zpid/
+37920,35.950436,-83.88599,1950.0,3,2.0,1300,"3032 Dodd St SE, Knoxville, TN 37920",582825934,/homedetails/3032-Dodd-St-SE-Knoxville-TN-37920/41669539_zpid/
+37920,35.919777,-83.87779,1795.0,3,1.0,1200,"6100 Easton Rd, Knoxville, TN 37920",1293179546,/homedetails/6100-Easton-Rd-Knoxville-TN-37920/41682880_zpid/
+37920,35.90228,-83.86695,1700.0,2,2.0,1240,"818 Wildview Way, Knoxville, TN 37920",2194105124,/homedetails/818-Wildview-Way-Knoxville-TN-37920/41695627_zpid/
+37920,35.94809,-83.98198,1790.0,2,1.5,,"612 Hillview Rd #1, Knoxville, TN 37919",3885038937,/homedetails/612-Hillview-Rd-1-Knoxville-TN-37919/2055487493_zpid/
+37920,35.939655,-83.93373,2000.0,2,1.5,1400,"1958 Cherokee Bluff Dr, Knoxville, TN 37920",4500593969,/homedetails/1958-Cherokee-Bluff-Dr-Knoxville-TN-37920/41668055_zpid/
+37920,35.88718,-83.89642,2710.0,3,2.5,2700,"2421 Amber Dawn Ln, Knoxville, TN 37920",3455703198,/homedetails/2421-Amber-Dawn-Ln-Knoxville-TN-37920/84132127_zpid/
+37920,35.95572,-83.9059,1575.0,2,1.0,750,"2300 Davenport Rd #A, Knoxville, TN 37920",4158065180,/homedetails/2300-Davenport-Rd-A-Knoxville-TN-37920/2055537864_zpid/
+37920,35.953552,-83.94976,1245.0,2,1.0,714,"2751 Jersey Ave, Knoxville, TN",7049484784,/b/2751-jersey-ave-knoxville-tn-9F2fmx/
+37920,35.9433,-83.88359,1700.0,3,2.5,1850,"4219 Sevierville Pike, Knoxville, TN 37920",6454213898,/homedetails/4219-Sevierville-Pike-Knoxville-TN-37920/41671153_zpid/
+37920,35.96018,-83.80057,1400.0,3,1.0,1000,"3009 Cox Ln #A, Knoxville, TN 37914",8242332239,/b/3009-cox-ln.-knoxville-tn-9F2MTP/
+37920,35.925797,-83.87125,2595.0,4,3.0,2800,"505 Tedlo Ln, Knoxville, TN 37920",10450812711,/homedetails/505-Tedlo-Ln-Knoxville-TN-37920/41681819_zpid/
+37920,35.919884,-83.86324,1695.0,3,1.0,1252,"6520 Jackie Ln, Knoxville, TN 37920",6185923936,/homedetails/6520-Jackie-Ln-Knoxville-TN-37920/41683916_zpid/
+37920,35.929398,-83.99496,1100.0,1,1.0,832,"5709 Lyons View Pike APT 6205, Knoxville, TN 37919",15964406,/homedetails/5709-Lyons-View-Pike-APT-6205-Knoxville-TN-37919/41678781_zpid/
+37920,35.921238,-83.86083,2650.0,3,2.0,1493,"109 Longvale Dr SE, Knoxville, TN 37920",162501656,/homedetails/109-Longvale-Dr-SE-Knoxville-TN-37920/2067963102_zpid/
+37920,35.952766,-83.89226,2500.0,4,2.0,1416,"1859 Buford St, Knoxville, TN 37920",325556029,/homedetails/1859-Buford-St-Knoxville-TN-37920/41669369_zpid/
+37920,35.965523,-83.91804,2200.0,0,1.0,1100,"430 S Gay St APT 101, Knoxville, TN 37902",355309991,/homedetails/430-S-Gay-St-APT-101-Knoxville-TN-37902/2098773675_zpid/
+37920,35.93096,-83.90566,2000.0,3,1.0,1500,"4507 Smelser Rd, Knoxville, TN 37920",687788935,/homedetails/4507-Smelser-Rd-Knoxville-TN-37920/41681628_zpid/
+37920,35.902573,-83.85275,1875.0,2,2.0,1200,"415 Abner Cruze Rd, Knoxville, TN 37920",1181429059,/homedetails/415-Abner-Cruze-Rd-Knoxville-TN-37920/186225115_zpid/
+37920,35.9162,-83.6948,1975.0,4,2.0,1800,"1210 Appaloosa Way, Sevierville, TN 37876",584058374,/homedetails/1210-Appaloosa-Way-Sevierville-TN-37876/2146047531_zpid/
+37920,35.917027,-83.89683,1595.0,1,1.0,780,"807 Oliver Rd #D, Knoxville, TN 37920",1029996759,/homedetails/807-Oliver-Rd-D-Knoxville-TN-37920/2062396783_zpid/
+37920,35.913197,-83.78978,3200.0,3,2.0,1586,"1104 E Hendron Chapel Rd, Knoxville, TN 37920",64619982,/homedetails/1104-E-Hendron-Chapel-Rd-Knoxville-TN-37920/41684518_zpid/
+37920,35.852154,-83.98634,1550.0,2,2.0,1216,"3709 Hampton Ln, Louisville, TN 37777",617499959,/homedetails/3709-Hampton-Ln-Louisville-TN-37777/119349221_zpid/
+37920,35.9465,-83.88991,1795.0,2,1.0,806,"119 Pearson Ave, Knoxville, TN 37920",947970628,/homedetails/119-Pearson-Ave-Knoxville-TN-37920/41670434_zpid/
+37920,35.95759,-83.882744,1950.0,2,1.0,800,"2206 Maplewood Dr, Knoxville, TN 37920",1564010938,/homedetails/2206-Maplewood-Dr-Knoxville-TN-37920/41656000_zpid/
+37920,35.95866,-83.93833,3600.0,3,2.5,1200,"1927 Highland Ave #1927, Knoxville, TN 37916",1391661976,/homedetails/1927-Highland-Ave-1927-Knoxville-TN-37916/2073175755_zpid/
+37920,35.910076,-83.74688,1900.0,3,2.0,1200,"1408 Hansard Dr, Seymour, TN 37865",1699028217,/homedetails/1408-Hansard-Dr-Seymour-TN-37865/42475992_zpid/
+37920,35.935772,-83.88115,1000.0,2,1.0,733,"496 E Red Bud Rd, Knoxville, TN 37920",1033826228,/homedetails/496-E-Red-Bud-Rd-Knoxville-TN-37920/55215285_zpid/
+37920,35.964333,-83.920746,3100.0,2,2.0,1200,"505 Union Ave APT 209, Knoxville, TN 37902",1031951854,/homedetails/505-Union-Ave-APT-209-Knoxville-TN-37902/186228037_zpid/
+37920,35.960403,-83.92832,1250.0,1,1.0,507,"510 14th St APT 204, Knoxville, TN 37916",1421437434,/homedetails/510-14th-St-APT-204-Knoxville-TN-37916/41654305_zpid/
+37920,35.95057,-83.98169,1750.0,2,2.0,900,"912 Hollywood Rd, Knoxville, TN 37919",1298309740,/homedetails/912-Hollywood-Rd-Knoxville-TN-37919/41666595_zpid/
+37920,35.899277,-83.93524,2590.0,3,2.5,2160,"2752 Minuteman Ln, Knoxville, TN 37920",2584987537,/homedetails/2752-Minuteman-Ln-Knoxville-TN-37920/2060856881_zpid/
+37920,35.92773,-83.867676,4000.0,3,2.0,2100,"6112 Sevierville Pike, Knoxville, TN 37920",526837278,/homedetails/6112-Sevierville-Pike-Knoxville-TN-37920/41683788_zpid/
+37920,35.91162,-83.93718,500.0,0,1.0,864,"2309 Maryville Pike, Knoxville, TN 37920",667353104,/homedetails/2309-Maryville-Pike-Knoxville-TN-37920/299824606_zpid/
+37920,35.9412,-83.90536,1495.0,1,1.0,750,"3520B Southwood Dr SE, Knoxville, TN 37920",1025497263,/homedetails/3520B-Southwood-Dr-SE-Knoxville-TN-37920/2066534589_zpid/
+37920,35.939377,-83.93551,2500.0,3,3.0,1758,"1824 Cherokee Bluff Dr, Knoxville, TN 37920",3119440532,/homedetails/1824-Cherokee-Bluff-Dr-Knoxville-TN-37920/41667963_zpid/
+37920,35.967117,-83.90258,2800.0,4,2.0,1426,"1425 Isabella Cir, Knoxville, TN 37915",1953750857,/homedetails/1425-Isabella-Cir-Knoxville-TN-37915/41655817_zpid/
+37920,35.963055,-83.929535,1600.0,2,1.0,1000,"1309 Forest Ave APT 1, Knoxville, TN 37916",1819174029,/homedetails/1309-Forest-Ave-APT-1-Knoxville-TN-37916/299822708_zpid/
+37920,35.956337,-83.90246,1600.0,2,1.0,896,"1110 Valley Ave, Knoxville, TN 37920",1823266607,/homedetails/1110-Valley-Ave-Knoxville-TN-37920/41669168_zpid/
+37920,35.918766,-83.99698,4900.0,4,5.5,5400,"6435 Cobblecreek Way, Knoxville, TN 37919",1295404576,/homedetails/6435-Cobblecreek-Way-Knoxville-TN-37919/80223352_zpid/
+37920,35.953396,-83.8853,2200.0,3,1.0,885,"2811 Hackman St, Knoxville, TN 37920",1222144489,/homedetails/2811-Hackman-St-Knoxville-TN-37920/41669476_zpid/
+37920,35.96718,-83.92211,3500.0,3,3.5,1600,"415 W Vine Ave APT 9, Knoxville, TN 37902",2426615380,/homedetails/415-W-Vine-Ave-APT-9-Knoxville-TN-37902/41653056_zpid/
+37920,35.915154,-83.70021,4200.0,4,3.5,4066,"1462 Ellis Woods Loop, Sevierville, TN 37876",948040925,/homedetails/1462-Ellis-Woods-Loop-Sevierville-TN-37876/62899469_zpid/
+37920,35.964928,-83.91892,7500.0,2,2.5,3043,"325 Union Ave, Knoxville, TN 37902",2845862631,/homedetails/325-Union-Ave-Knoxville-TN-37902/2055243786_zpid/
+37920,35.94997,-83.98095,2100.0,2,2.5,1208,"4333 Apex Dr, Knoxville, TN 37919",5346381762,/homedetails/4333-Apex-Dr-Knoxville-TN-37919/41666527_zpid/
+37920,35.96752,-83.97025,1800.0,2,1.5,1440,"2118 Piedmont St, Knoxville, TN 37921",2943256537,/homedetails/2118-Piedmont-St-Knoxville-TN-37921/41652175_zpid/
+37920,35.93081,-83.966934,3700.0,4,3.0,2500,"3858 Sequoyah Ave, Knoxville, TN 37919",1896939262,/homedetails/3858-Sequoyah-Ave-Knoxville-TN-37919/41679979_zpid/
+37920,35.957916,-83.9336,1250.0,1,1.0,336,"1700 Clinch Ave APT 313, Knoxville, TN 37916",1663787076,/homedetails/1700-Clinch-Ave-APT-313-Knoxville-TN-37916/41654623_zpid/
+37920,35.968147,-83.9391,2075.0,3,3.0,1320,"1614 Gross Ave, Knoxville, TN 37921",3256776527,/homedetails/1614-Gross-Ave-Knoxville-TN-37921/60149580_zpid/
+37920,35.94864,-83.982635,1700.0,2,1.0,814,"4509 Hillview Rd, Knoxville, TN 37919",684484608,/homedetails/4509-Hillview-Rd-Knoxville-TN-37919/41666617_zpid/
+37920,35.939774,-83.93417,1950.0,3,2.5,1750,"1912 Cherokee Bluff Dr, Knoxville, TN 37920",3092092602,/homedetails/1912-Cherokee-Bluff-Dr-Knoxville-TN-37920/41668019_zpid/
+37920,35.94479,-83.8928,1950.0,3,2.0,1095,"3604 Decatur Dr, Knoxville, TN 37920",1559197171,/homedetails/3604-Decatur-Dr-Knoxville-TN-37920/41671063_zpid/
+37920,35.869274,-83.76877,1950.0,3,1.5,1540,"414 Black Oak Ridge Rd, Seymour, TN 37865",1533255977,/homedetails/414-Black-Oak-Ridge-Rd-Seymour-TN-37865/42482992_zpid/
+37920,35.943474,-83.986336,2000.0,2,2.5,1425,"4039 Heather Ct #4039, Knoxville, TN 37919",2868361240,/homedetails/4039-Heather-Ct-4039-Knoxville-TN-37919/2068701256_zpid/
+37920,35.925327,-83.919685,3100.0,3,2.0,1200,"1030 Avenue A, Knoxville, TN 37920",1355456855,/homedetails/1030-Avenue-A-Knoxville-TN-37920/41682367_zpid/
+37920,35.962505,-83.928276,1700.0,1,1.0,598,"1211 Highland Ave APT 101, Knoxville, TN 37916",5266675175,/homedetails/1211-Highland-Ave-APT-101-Knoxville-TN-37916/41654241_zpid/
+37920,35.94495,-83.8874,1200.0,2,1.0,1074,"3529 Feathers St, Knoxville, TN 37920",1592982950,/homedetails/3529-Feathers-St-Knoxville-TN-37920/41670294_zpid/
+37920,35.919334,-83.941635,2400.0,3,2.5,1998,"4910 Briar Rock Ln, Knoxville, TN 37920",408775746,/homedetails/4910-Briar-Rock-Ln-Knoxville-TN-37920/98897491_zpid/
+37920,35.85075,-83.93439,1600.0,3,1.5,1074,"174 Roddy Branch Rd #174, Rockford, TN 37853",292923834,/b/00174r-rockford-tn-9Vn4Pm/
+37920,35.84926,-83.98786,1200.0,2,1.5,1150,"3610 Kelly Cir #3610-B, Louisville, TN 37777",378574691,/b/03610k-louisville-tn-9DyLcV/
+37920,35.943516,-83.985954,1800.0,2,2.5,1450,"4011 Heather Ct, Knoxville, TN 37919",557022416,/homedetails/4011-Heather-Ct-Knoxville-TN-37919/41667213_zpid/
+37920,35.943012,-83.90264,1900.0,2,2.0,1050,"433 Taliwa Dr, Knoxville, TN 37920",555381905,/homedetails/433-Taliwa-Dr-Knoxville-TN-37920/41670837_zpid/
+37920,35.947037,-83.998375,2250.0,3,2.0,1168,"1505 Holman Dr, Knoxville, TN 37909",1109542013,/homedetails/1505-Holman-Dr-Knoxville-TN-37909/41666865_zpid/
+37920,35.9019,-83.82789,1300.0,2,1.0,815,"1424 Tipton Station Rd, Knoxville, TN 37920",677451833,/homedetails/1424-Tipton-Station-Rd-Knoxville-TN-37920/2080437086_zpid/
+37920,35.913193,-83.834496,1600.0,2,2.5,1200,"456 E Norton Rd #1, Knoxville, TN 37920",1726311278,/homedetails/456-E-Norton-Rd-1-Knoxville-TN-37920/2055026299_zpid/
+37920,35.93988,-83.8824,1500.0,2,1.5,1100,"755 E Red Bud Rd #101, Knoxville, TN 37920",1268365834,/b/755-east-red-bud-road-knoxville-tn-BdGWrF/
+37920,35.89191,-83.887505,2500.0,4,3.0,1750,"7340 Coatney Rd #6B46B2CB9, Knoxville, TN 37920",919118000,/homedetails/7340-Coatney-Rd-6B46B2CB9-Knoxville-TN-37920/2055034261_zpid/
+37920,35.943813,-83.88838,1750.0,2,1.0,975,"3608 S Haven Rd SE, Knoxville, TN 37920",1108210714,/homedetails/3608-S-Haven-Rd-SE-Knoxville-TN-37920/41671136_zpid/
+37920,35.911602,-83.87835,2300.0,3,2.0,2207,"6339 Stonecress Ln, Knoxville, TN 37920",4135002836,/homedetails/6339-Stonecress-Ln-Knoxville-TN-37920/41683088_zpid/
+37920,35.912693,-83.835495,1600.0,2,2.5,1200,"456 E Norton Rd, Knoxville, TN 37920",1712391018,/homedetails/456-E-Norton-Rd-Knoxville-TN-37920/2055025921_zpid/
+37920,35.854298,-83.75263,1400.0,2,2.0,900,"436 Tittsworth Springs Rd #2, Seymour, TN 37865",1186151937,/homedetails/436-Tittsworth-Springs-Rd-2-Seymour-TN-37865/2093775208_zpid/
+37920,35.939247,-83.93432,2310.0,3,1.5,1812,"1976 Cherokee Bluff Dr, Knoxville, TN 37920",8965292934,/homedetails/1976-Cherokee-Bluff-Dr-Knoxville-TN-37920/41668064_zpid/
+37920,35.95185,-83.96543,725.0,3,2.0,1038,"410 Harry St, Knoxville, TN 37919",9404050132,/apartments/knoxville-tn/sutherland-square/5YyDsQ/
+37920,35.93462,-83.91303,950.0,1,1.0,1296,"4010 W Martin Mill Pike, Knoxville, TN",2132147747,/b/4010-w-martin-mill-pike-knoxville-tn-B6qtTB/
+37920,35.947098,-83.971085,1400.0,2,1.0,768,"3956 N Bellemeade Ave, Knoxville, TN 37919",5390704413,/homedetails/3956-N-Bellemeade-Ave-Knoxville-TN-37919/41666461_zpid/
+37920,35.8554,-83.995125,1300.0,3,1.5,,"1919 E Old Topside Rd #1919-B, Louisville, TN 37777",1782714829,/b/01919o-louisville-tn-9QfVZV/
+37920,35.968506,-83.92,2550.0,2,1.0,975,"116 S Gay St #808, Knoxville, TN 37902",4207547139,/b/sterchi-lofts-knoxville-tn-5YXgnC/
+37920,35.966297,-83.900536,2500.0,4,2.0,1550,"1121 Magnet Pl, Knoxville, TN 37915",10784356409,/homedetails/1121-Magnet-Pl-Knoxville-TN-37915/41655833_zpid/
+37920,35.962036,-83.92937,900.0,1,1.0,452,"1319 Highland Ave, Knoxville, TN",1190857014,/apartments/knoxville-tn/highland-terrace-communities/5Xt3rv/
+37920,35.908527,-83.852745,719.0,3,2.0,1045,"290 Quaker Way, Knoxville, TN 37920",281282962,/apartments/knoxville-tn/white-oak-crossing/BMT6qZ/
+37076,36.164574,-86.5205,1509.0,1,1.0,792,"1001 Providence Pkwy, Mount Juliet, TN",162610621,/apartments/mount-juliet-tn/creekside-at-providence/65WmdW/
+37076,36.21515,-86.58438,1550.0,2,2.0,910,"1011 Lady Nashville Dr, Hermitage, TN",277631257,/apartments/hermitage-tn/the-aria-at-heritage-hills/Bfpgkc/
+37076,36.214687,-86.5715,2095.0,2,2.5,1565,"1000 Devonshire Dr, Old Hickory, TN",8535603,/b/highland-at-hickory-hills-townhomes-old-hickory-tn-BPMTWn/
+37076,36.213623,-86.571846,2121.0,2,2.5,1565,"1000 Devonshire Dr, Old Hickory, TN",339030706,/b/highland-at-hickory-hills-townhomes-old-hickory-tn-BPMTWn/
+37076,36.18027,-86.6018,1180.0,1,1.0,750,"5610 Old Hickory Blvd, Hermitage, TN",10162064,/apartments/hermitage-tn/meridian-at-hermitage/5XhxgG/
+37076,36.179916,-86.60218,1220.0,1,1.0,750,"5610 Old Hickory Blvd, Hermitage, TN",194604412,/apartments/hermitage-tn/meridian-at-hermitage/5XhxgG/
+37076,36.086857,-86.605995,1311.0,1,1.0,730,"2999 Smith Springs Rd, Nashville, TN",370349558,/apartments/nashville-tn/chase-cove-apartments/5XhxXk/
+37076,36.092285,-86.65396,1701.0,2,1.5,1150,"264 British Woods Dr #332, Nashville, TN 37217",975206827,/apartments/nashville-tn/british-woods-apartments/5XhxbF/
+37076,36.092278,-86.65396,1180.0,1,1.0,725,"264 British Woods Dr, Nashville, TN",24795665,/apartments/nashville-tn/british-woods-apartments/5XhxbF/
+37076,36.199932,-86.61378,1584.0,2,1.0,900,"8300 Terry Ln #436BT, Hermitage, TN 37076",24730582,/apartments/hermitage-tn/retreat-at-hermitage/5XhxYB/
+37076,36.199924,-86.61377,1374.0,2,1.0,900,"8300 Terry Ln, Hermitage, TN",24766543,/apartments/hermitage-tn/retreat-at-hermitage/5XhxYB/
+37076,36.14484,-86.62524,1249.0,1,1.0,750,"3555 Bell Rd, Nashville, TN",10102603,/apartments/nashville-tn/priest-lake/5XhxgZ/
+37076,36.141327,-86.62262,1634.0,2,2.0,1000,"3555 Bell Rd, Nashville, TN",194542572,/apartments/nashville-tn/priest-lake/5XhxgZ/
+37076,36.144848,-86.62524,1389.0,1,1.0,750,"3555 Bell Rd, Nashville, TN",10102167,/apartments/nashville-tn/priest-lake/5XhxgZ/
+37076,36.132366,-86.519394,2730.0,3,2.5,1831,"2791 S Mount Juliet Rd, Mount Juliet, TN",8689903,/apartments/mount-juliet-tn/cassa-life-mt-juliet/9QdNcV/
+37076,36.16678,-86.59907,1198.0,0,1.0,500,"5900 Old Hickory Blvd, Hermitage, TN",281789043,/apartments/hermitage-tn/maa-park/5Xhxg9/
+37076,36.165596,-86.59805,1303.0,1,1.0,685,"5900 Old Hickory Blvd, Hermitage, TN",281788689,/apartments/hermitage-tn/maa-park/5Xhxg9/
+37076,36.16415,-86.59775,1224.0,1,1.0,603,"100 Arbor Lake Blvd, Hermitage, TN",356786547,/apartments/hermitage-tn/highlands-at-the-lake/5Xhxhb/
+37076,36.166283,-86.523865,1375.0,1,1.0,724,"630 Providence Pkwy, Mount Juliet, TN",10575795,/b/enclave-at-providence-mount-juliet-tn-CYGqKn/
+37076,36.17812,-86.641464,1315.0,1,1.0,462,"100 Jackson Downs Blvd, Nashville, TN",413260036,/apartments/nashville-tn/polo-park/5Xhxdq/
+37076,36.13056,-86.51471,2885.0,3,2.5,1907,"2791 S Mount Juliet Rd #644, Mount Juliet, TN 37122",944100656,/apartments/mount-juliet-tn/cassa-life-mt-juliet/9QdNcV/
+37076,36.123116,-86.62995,1345.0,1,1.0,677,"1501 Woodland Pointe Dr, Nashville, TN",22500278,/apartments/nashville-tn/hamptons-at-woodland-pointe/5XhxZw/
+37076,36.212402,-86.58569,1870.0,2,1.5,1475,"1066 Lady Nashville Dr, Hermitage, TN",18341378,/apartments/hermitage-tn/heritage-hills-townhomes/BMb5kc/
+37076,36.19978,-86.516754,1487.0,0,1.0,666,"2099 N Mount Juliet Rd, Mount Juliet, TN",10930603,/apartments/mount-juliet-tn/vintage-station-north/C2nQ75/
+37076,36.170795,-86.60472,1214.0,0,1.0,538,"4042 Shurgard Way, Hermitage, TN",10414534,/apartments/hermitage-tn/the-crockett/BTyc9D/
+37076,36.16402,-86.66359,1379.0,1,1.0,675,"135 Donelson Pike, Nashville, TN",442768428,/apartments/nashville-tn/bexley-donelson/9Drxzz/
+37076,36.17144,-86.596,1083.0,1,1.0,650,"4100 Central Pike, Hermitage, TN",326893417,/apartments/hermitage-tn/colonnade/5XhxXc/
+37076,36.16407,-86.59731,1185.0,1,1.0,770,"6001 Old Hickory Blvd, Hermitage, TN",21491252,/apartments/hermitage-tn/the-arbours-of-hermitage/5XhxcD/
+37076,36.171696,-86.61151,1311.0,1,1.0,600,"1100 Crystal Spring Ln, Hermitage, TN",8650582,/apartments/hermitage-tn/cherry-creek/5Xhxbr/
+37076,36.17314,-86.61036,1620.0,2,2.0,1100,"1100 Crystal Spring Ln, Hermitage, TN",281815825,/apartments/hermitage-tn/cherry-creek/5Xhxbr/
+37076,36.09178,-86.64881,1165.0,1,1.0,800,"2005 Borowood Dr, Nashville, TN",281201555,/apartments/nashville-tn/hampton-chase/5Xhxch/
+37076,36.09186,-86.64903,1175.0,1,1.0,800,"2005 Borowood Dr, Nashville, TN",508157616,/apartments/nashville-tn/hampton-chase/5Xhxch/
+37076,36.17219,-86.59987,999.0,0,1.0,264,"4040 Central Pike, Hermitage, TN",413097345,/apartments/hermitage-tn/hermitage-studios/CYcJHT/
+37076,36.17203,-86.59946,1049.0,0,1.0,288,"4040 Central Pike, Hermitage, TN",2927312950,/apartments/hermitage-tn/hermitage-studios/CYcJHT/
+37076,36.213924,-86.59628,1295.0,2,1.5,912,"4716 Trenton Dr, Hermitage, TN",1797016887,/apartments/hermitage-tn/cedar-creek-apartments/5XkTLC/
+37076,36.16747,-86.61405,1043.0,1,1.0,600,"1800 Oakwell Farms Ln, Hermitage, TN",8722548,/apartments/hermitage-tn/southpoint-at-stones-river/5Xhxfw/
+37076,36.167248,-86.61364,1223.0,1,1.0,600,"1800 Oakwell Farms Ln, Hermitage, TN",317711420,/apartments/hermitage-tn/southpoint-at-stones-river/5Xhxfw/
+37076,36.144253,-86.63902,1243.0,2,2.0,915,"3110 Elm Hill Pike #802, Nashville, TN 37214",8805787,/apartments/nashville-tn/terrace-park-apartments/5XhxnR/
+37076,36.14424,-86.639,1243.0,2,2.0,915,"3110 Elm Hill Pike, Nashville, TN",426320295,/apartments/nashville-tn/terrace-park-apartments/5XhxnR/
+37076,36.088936,-86.63622,2395.0,3,3.0,1444,"1243 Nashboro Blvd, Nashville, TN 37217",14266599,/homedetails/1243-Nashboro-Blvd-Nashville-TN-37217/337061029_zpid/
+37076,36.181145,-86.598495,3000.0,4,2.5,2200,"827 Bloomdale Trce, Hermitage, TN 37076",517548936,/homedetails/827-Bloomdale-Trce-Hermitage-TN-37076/307240168_zpid/
+37076,36.153362,-86.63054,2000.0,2,1.5,1096,"739 Fitzpatrick Rd, Nashville, TN 37214",1053578868,/homedetails/739-Fitzpatrick-Rd-Nashville-TN-37214/41122602_zpid/
+37076,36.08611,-86.60932,2400.0,3,2.5,3000,"3005 Runabout Dr, Nashville, TN 37217",337303169,/homedetails/3005-Runabout-Dr-Nashville-TN-37217/41167215_zpid/
+37076,36.170574,-86.62352,2499.0,3,2.0,1507,"3748 Hoggett Ford Rd, Hermitage, TN 37076",902900891,/homedetails/3748-Hoggett-Ford-Rd-Hermitage-TN-37076/108784201_zpid/
+37076,36.21959,-86.60236,2100.0,3,2.5,1679,"732 Sweetwater Cir, Old Hickory, TN 37138",87379183,/homedetails/732-Sweetwater-Cir-Old-Hickory-TN-37138/41080262_zpid/
+37076,36.205112,-86.605995,1450.0,2,2.0,1032,"700 Rachels Trl, Hermitage, TN 37076",128465474,/homedetails/700-Rachels-Trl-Hermitage-TN-37076/41093043_zpid/
+37076,36.175354,-86.58919,1100.0,2,1.0,800,"4438 Gina Brooke Dr, Hermitage, TN 37076",151808740,/homedetails/4438-Gina-Brooke-Dr-Hermitage-TN-37076/2084948257_zpid/
+37076,36.18269,-86.56751,2195.0,3,2.5,1700,"2131 Ponty Pool Dr, Mount Juliet, TN 37122",2226779981,/homedetails/2131-Ponty-Pool-Dr-Mount-Juliet-TN-37122/80372669_zpid/
+37076,36.08161,-86.61421,1295.0,2,1.5,1056,"760 Holder Dr, Nashville, TN 37217",445497857,/homedetails/760-Holder-Dr-Nashville-TN-37217/41184962_zpid/
+37076,36.226692,-86.575615,2465.0,3,2.0,1747,"589 Springmont Blvd, Old Hickory, TN 37138",80191599,/homedetails/589-Springmont-Blvd-Old-Hickory-TN-37138/42669716_zpid/
+37076,36.175613,-86.6224,2000.0,3,2.0,1025,"3628 Pierside Dr, Hermitage, TN 37076",38788859,/homedetails/3628-Pierside-Dr-Hermitage-TN-37076/41109748_zpid/
+37076,36.20044,-86.52379,2089.0,4,3.5,1600,"311 Woodfern Ct, Mount Juliet, TN 37122",204766145,/homedetails/311-Woodfern-Ct-Mount-Juliet-TN-37122/247080400_zpid/
+37076,36.187305,-86.59873,1895.0,3,2.0,1279,"509 Jackson Thistle, Hermitage, TN 37076",151910199,/homedetails/509-Jackson-Thistle-Hermitage-TN-37076/41109226_zpid/
+37076,36.20822,-86.57906,2199.0,3,2.0,1360,"2802 Halifax Ct, Old Hickory, TN 37138",290943066,/homedetails/2802-Halifax-Ct-Old-Hickory-TN-37138/80363053_zpid/
+37076,36.212296,-86.59324,2190.0,4,1.5,1773,"4716 Phoenix Dr, Hermitage, TN 37076",4849029833,/homedetails/4716-Phoenix-Dr-Hermitage-TN-37076/2055697427_zpid/
+37076,36.08265,-86.66007,2500.0,3,3.5,2671,"853 Bishopsgate Rd #A, Antioch, TN 37013",1241494308,/b/853-bishopsgate-rd-antioch-tn-9DkrHx/
+37076,36.197823,-86.599724,2200.0,3,2.0,1143,"805 Netherlands Dr, Hermitage, TN 37076",442352044,/homedetails/805-Netherlands-Dr-Hermitage-TN-37076/41094694_zpid/
+37076,36.207596,-86.57685,2775.0,4,2.5,2033,"1200 Georgetown Ct, Old Hickory, TN 37138",872203862,/homedetails/1200-Georgetown-Ct-Old-Hickory-TN-37138/80362905_zpid/
+37076,36.186596,-86.59985,2255.0,3,2.0,1196,"1416 Autumn Knl, Hermitage, TN 37076",872203862,/homedetails/1416-Autumn-Knl-Hermitage-TN-37076/41109045_zpid/
+37076,36.171097,-86.65324,2200.0,2,2.0,1767,"110 Riverstone Dr, Nashville, TN 37214",1119245185,/homedetails/110-Riverstone-Dr-Nashville-TN-37214/41108312_zpid/
+37076,36.188023,-86.572174,2695.0,4,2.5,2781,"250 Cobblestone Lndg, Mount Juliet, TN 37122",569761625,/homedetails/250-Cobblestone-Lndg-Mount-Juliet-TN-37122/103854454_zpid/
+37076,36.17892,-86.541245,2325.0,3,2.0,2143,"1041 Secretariat Dr, Mount Juliet, TN 37122",439622867,/homedetails/1041-Secretariat-Dr-Mount-Juliet-TN-37122/80372723_zpid/
+37076,36.211285,-86.63401,1250.0,2,1.0,840,"701-703 Linden Grn, Hermitage, TN 37076",1303237314,/homedetails/701-703-Linden-Grn-Hermitage-TN-37076/2054931494_zpid/
+37076,36.0858,-86.585266,2445.0,3,2.0,1900,"3416 Bridgeton Cv, Antioch, TN 37013",1073885419,/homedetails/3416-Bridgeton-Cv-Antioch-TN-37013/41188810_zpid/
+37076,36.094097,-86.61152,2100.0,4,3.0,1749,"3510 Wood Bridge Dr, Nashville, TN 37217",1044361580,/homedetails/3510-Wood-Bridge-Dr-Nashville-TN-37217/41166432_zpid/
+37076,36.10895,-86.514465,2745.0,3,2.5,2413,"413 Southwinds Dr, Hermitage, TN 37076",1570192567,/homedetails/413-Southwinds-Dr-Hermitage-TN-37076/80367266_zpid/
+37076,36.155087,-86.51041,3450.0,5,4.0,3533,"1173 Carlisle Pl, Mount Juliet, TN",2818095714,"/b/Mount-Juliet-TN/36.155087,-86.51041_ll/"
+37076,36.08597,-86.58575,2250.0,3,2.0,1892,"409 Bridgeton Cove Ct, Antioch, TN 37013",609017605,/homedetails/409-Bridgeton-Cove-Ct-Antioch-TN-37013/41188813_zpid/
+37076,36.206627,-86.567024,2295.0,3,2.0,1854,"1710 Carrington Ct, Old Hickory, TN 37138",1188699148,/homedetails/1710-Carrington-Ct-Old-Hickory-TN-37138/80374984_zpid/
+37076,36.20298,-86.58959,1795.0,2,2.0,1328,"735 Tulip Grove Rd APT 348, Hermitage, TN 37076",1900099328,/homedetails/735-Tulip-Grove-Rd-APT-348-Hermitage-TN-37076/81103673_zpid/
+37076,36.215313,-86.62575,2620.0,3,2.5,2248,"1436 Aaronwood Dr, Old Hickory, TN 37138",2196710593,/homedetails/1436-Aaronwood-Dr-Old-Hickory-TN-37138/41078741_zpid/
+37076,36.211834,-86.589874,1395.0,2,2.0,1073,"211 Brooke Castle Dr, Hermitage, TN 37076",409190769,/homedetails/211-Brooke-Castle-Dr-Hermitage-TN-37076/59889055_zpid/
+37076,36.214924,-86.62474,2510.0,4,2.5,2312,"1416 Aaronwood Dr, Old Hickory, TN 37138",1021674889,/homedetails/1416-Aaronwood-Dr-Old-Hickory-TN-37138/41078736_zpid/
+37076,36.19274,-86.625755,1150.0,1,1.0,620,"108 Bonnabrook Dr #214, Hermitage, TN 37076",7074338533,/homedetails/108-Bonnabrook-Dr-214-Hermitage-TN-37076/2062590640_zpid/
+37076,36.1696,-86.661354,2570.0,3,2.0,1747,"212 Riverpoint Ct, Nashville, TN 37214",2715092660,/homedetails/212-Riverpoint-Ct-Nashville-TN-37214/41120638_zpid/
+37076,36.176907,-86.59625,1895.0,3,2.0,1146,"112 Saddlestone Ct S, Hermitage, TN 37076",942366787,/homedetails/112-Saddlestone-Ct-S-Hermitage-TN-37076/55294723_zpid/
+37076,36.154987,-86.66008,2150.0,3,1.0,1361,"2817 Dunmore Dr, Nashville, TN 37214",3723087657,/homedetails/2817-Dunmore-Dr-Nashville-TN-37214/41121553_zpid/
+37076,36.1884,-86.60679,2270.0,3,2.0,1302,"416 Hunters Path Ct, Hermitage, TN 37076",2197063157,/homedetails/416-Hunters-Path-Ct-Hermitage-TN-37076/52121532_zpid/
+37076,36.199974,-86.52328,2089.0,4,3.5,1600,"133 Hickory Station Ln, Mount Juliet, TN 37122",1750359904,/homedetails/133-Hickory-Station-Ln-Mount-Juliet-TN-37122/247080758_zpid/
+37076,36.22206,-86.579475,1780.0,3,1.0,1100,"311 Santa Rosa Dr, Old Hickory, TN 37138",1160126530,/homedetails/311-Santa-Rosa-Dr-Old-Hickory-TN-37138/42669960_zpid/
+37076,36.199883,-86.5236,2089.0,4,3.5,1600,"401 Riverwood Ct, Mount Juliet, TN 37122",2623946720,/homedetails/401-Riverwood-Ct-Mount-Juliet-TN-37122/2089149869_zpid/
+37076,36.173782,-86.58882,1945.0,3,2.0,1359,"4332 Central Valley Dr, Hermitage, TN 37076",447167620,/homedetails/4332-Central-Valley-Dr-Hermitage-TN-37076/41110799_zpid/
+37076,36.200623,-86.52372,2089.0,4,3.5,1600,"310 Woodfern Ct, Mount Juliet, TN 37122",972729609,/homedetails/310-Woodfern-Ct-Mount-Juliet-TN-37122/247080746_zpid/
+37076,36.22005,-86.59815,2285.0,3,2.0,1340,"503 Selsey Ct S, Hermitage, TN 37076",4479099718,/homedetails/503-Selsey-Ct-S-Hermitage-TN-37076/41080287_zpid/
+37076,36.134212,-86.63432,2315.0,3,2.0,1214,"1805 Easton Ct, Nashville, TN 37214",3888791599,/homedetails/1805-Easton-Ct-Nashville-TN-37214/41137164_zpid/
+37076,36.20632,-86.6054,1395.0,2,1.0,1036,"404 Rachels Ct W, Hermitage, TN 37076",4748533283,/homedetails/404-Rachels-Ct-W-Hermitage-TN-37076/41093071_zpid/
+37076,36.181347,-86.59577,2229.0,3,3.0,1495,"108 Tulip Grove Poin, Hermitage, TN 37076",1414302576,/homedetails/108-Tulip-Grove-Poin-Hermitage-TN-37076/2066241152_zpid/
+37076,36.13316,-86.64062,2295.0,3,2.0,1770,"117 New Haven Ct, Nashville, TN 37214",1572641606,/homedetails/117-New-Haven-Ct-Nashville-TN-37214/67621258_zpid/
+37076,36.08585,-86.65894,2225.0,3,2.5,2312,"1009 Blue Mountain Ln, Antioch, TN 37013",439623192,/homedetails/1009-Blue-Mountain-Ln-Antioch-TN-37013/108759224_zpid/
+37076,36.202637,-86.59374,1795.0,3,2.0,1223,"5016 Greer Station Dr, Hermitage, TN 37076",3326289087,/homedetails/5016-Greer-Station-Dr-Hermitage-TN-37076/41094244_zpid/
+37076,36.19626,-86.59003,2649.0,4,2.5,2564,"720 Wyntree N, Hermitage, TN 37076",1786186227,/homedetails/720-Wyntree-N-Hermitage-TN-37076/52356558_zpid/
+37076,36.09274,-86.63309,1900.0,2,2.5,1388,"2424 Nashboro Blvd, Nashville, TN 37217",2290075174,/homedetails/2424-Nashboro-Blvd-Nashville-TN-37217/67654408_zpid/
+37076,36.205395,-86.60516,1940.0,3,2.5,1328,"709 Rachels Trl, Hermitage, TN 37076",2711128869,/homedetails/709-Rachels-Trl-Hermitage-TN-37076/41092976_zpid/
+37076,36.153473,-86.59414,2450.0,3,2.0,2105,"4844 Peninsula Pointe Dr, Hermitage, TN 37076",3075346918,/homedetails/4844-Peninsula-Pointe-Dr-Hermitage-TN-37076/41123267_zpid/
+37076,36.19156,-86.61737,1725.0,3,1.5,1363,"6003 Lopez Ln, Hermitage, TN 37076",2936828667,/homedetails/6003-Lopez-Ln-Hermitage-TN-37076/41108587_zpid/
+37076,36.149303,-86.63129,2360.0,3,2.0,1407,"3104 Blackwood Dr, Nashville, TN 37214",3363013024,/homedetails/3104-Blackwood-Dr-Nashville-TN-37214/41122614_zpid/
+37076,36.195095,-86.56933,2340.0,3,2.0,2240,"1200 Nighthawk Ct, Mount Juliet, TN 37122",705798617,/homedetails/1200-Nighthawk-Ct-Mount-Juliet-TN-37122/80363240_zpid/
+37076,36.08083,-86.657455,1597.0,2,2.5,1188,"949 Strand Fleet Dr, Antioch, TN 37013",1625916547,/homedetails/949-Strand-Fleet-Dr-Antioch-TN-37013/41182561_zpid/
+37076,36.153015,-86.66083,2100.0,3,1.0,1301,"2811 Branwood Dr, Nashville, TN 37214",1588884136,/homedetails/2811-Branwood-Dr-Nashville-TN-37214/41122113_zpid/
+37076,36.130123,-86.63788,1650.0,3,2.5,1584,"934 Hammack Dr, Nashville, TN 37214",5439768275,/homedetails/934-Hammack-Dr-Nashville-TN-37214/41137537_zpid/
+37076,36.177246,-86.61145,1500.0,2,1.5,1116,"240 Thistle Ln, Hermitage, TN 37076",1310537691,/homedetails/240-Thistle-Ln-Hermitage-TN-37076/41109884_zpid/
+37076,36.189518,-86.56961,2225.0,3,2.5,2124,"1542 Cardinal Ln, Mount Juliet, TN 37122",3977036025,/homedetails/1542-Cardinal-Ln-Mount-Juliet-TN-37122/80363361_zpid/
+37076,36.209843,-86.57236,2520.0,3,2.5,2683,"1410 Brighton Cir, Mount Juliet, TN 37122",4150673085,/homedetails/1410-Brighton-Cir-Mount-Juliet-TN-37122/2106465612_zpid/
+37076,36.19162,-86.62027,2095.0,4,2.0,1440,"6004 Cortez Ct, Hermitage, TN 37076",6080451236,/homedetails/6004-Cortez-Ct-Hermitage-TN-37076/41108480_zpid/
+37076,36.20163,-86.59379,2320.0,3,2.5,1897,"444 Scotts Creek Trl, Hermitage, TN 37076",4918433816,/homedetails/444-Scotts-Creek-Trl-Hermitage-TN-37076/67646278_zpid/
+37076,36.214058,-86.581055,2370.0,3,3.0,2427,"712 Garland Dr, Old Hickory, TN 37138",5256654885,/homedetails/712-Garland-Dr-Old-Hickory-TN-37138/42670138_zpid/
+37076,36.186,-86.60717,1950.0,3,2.0,1753,"1217 Jacksons View Rd, Hermitage, TN 37076",4738957407,/homedetails/1217-Jacksons-View-Rd-Hermitage-TN-37076/41109185_zpid/
+37076,36.20586,-86.62769,2100.0,4,3.0,1884,"181 Bonnafield Dr, Hermitage, TN 37076",3938902734,/homedetails/181-Bonnafield-Dr-Hermitage-TN-37076/41092541_zpid/
+37076,36.22378,-86.59565,1995.0,2,2.0,1751,"812 Old Coach Pl, Hermitage, TN 37076",2785452680,/homedetails/812-Old-Coach-Pl-Hermitage-TN-37076/41079962_zpid/
+37076,36.20718,-86.57075,2499.0,3,2.5,2362,"2511 Edinburgh St, Old Hickory, TN 37138",512074088,/homedetails/2511-Edinburgh-St-Old-Hickory-TN-37138/80363014_zpid/
+37076,36.21842,-86.59224,2020.0,3,2.5,1392,"1752 Stone Hollow Ct, Hermitage, TN 37076",5537171811,/homedetails/1752-Stone-Hollow-Ct-Hermitage-TN-37076/54588033_zpid/
+37076,36.08258,-86.63586,2440.0,3,2.0,1833,"2521 Ravine Dr, Nashville, TN 37217",3031967842,/homedetails/2521-Ravine-Dr-Nashville-TN-37217/41165856_zpid/
+37076,36.220894,-86.58328,2425.0,4,2.0,1900,"304 Matterhorn Dr, Old Hickory, TN 37138",2240078285,/homedetails/304-Matterhorn-Dr-Old-Hickory-TN-37138/80357059_zpid/
+37076,36.22026,-86.62506,2230.0,3,2.5,1699,"804 Conway Pl, Old Hickory, TN 37138",7078431324,/homedetails/804-Conway-Pl-Old-Hickory-TN-37138/41080169_zpid/
+37076,36.083073,-86.63598,2345.0,3,2.0,2085,"2516 Ravine Dr, Nashville, TN 37217",5307227574,/homedetails/2516-Ravine-Dr-Nashville-TN-37217/41165910_zpid/
+37076,36.128635,-86.63632,1895.0,3,2.5,1596,"1011 Pleasant View Dr, Nashville, TN 37214",2211270932,/homedetails/1011-Pleasant-View-Dr-Nashville-TN-37214/41137647_zpid/
+37076,36.208183,-86.57336,2100.0,3,2.0,1254,"1465 Brighton Cir, Old Hickory, TN 37138",2395649988,/homedetails/1465-Brighton-Cir-Old-Hickory-TN-37138/80362934_zpid/
+37076,36.19043,-86.56786,2440.0,4,2.5,2248,"801 Partridge Cir, Mount Juliet, TN 37122",6012043524,/homedetails/801-Partridge-Cir-Mount-Juliet-TN-37122/80363377_zpid/
+37076,36.21441,-86.51241,2465.0,3,2.5,2176,"6005 Crestview Ct, Mount Juliet, TN 37122",446569072,/homedetails/6005-Crestview-Ct-Mount-Juliet-TN-37122/80372297_zpid/
+37076,36.219707,-86.62497,2350.0,3,2.0,1676,"904 Conway Ln, Old Hickory, TN 37138",7697405493,/homedetails/904-Conway-Ln-Old-Hickory-TN-37138/41080175_zpid/
+37076,36.180435,-86.61322,1395.0,2,1.0,744,"4155 Dodson Chapel Rd, Hermitage, TN 37076",1624890992,/homedetails/4155-Dodson-Chapel-Rd-Hermitage-TN-37076/2057297755_zpid/
+37076,36.221775,-86.62629,1995.0,3,2.0,1655,"4221 Brackenwood Dr, Old Hickory, TN 37138",4486404257,/homedetails/4221-Brackenwood-Dr-Old-Hickory-TN-37138/41079600_zpid/
+37076,36.184486,-86.60312,2070.0,3,2.0,1871,"409 Scenicway Knob, Hermitage, TN 37076",7726446110,/homedetails/409-Scenicway-Knob-Hermitage-TN-37076/41109057_zpid/
+37076,36.181553,-86.61065,2549.0,3,2.5,1500,"3516 Albee Dr, Hermitage, TN 37076",4155355456,/homedetails/3516-Albee-Dr-Hermitage-TN-37076/41109479_zpid/
+37076,36.12753,-86.63282,1955.0,3,2.0,1150,"1303 Priest Woods Ct, Nashville, TN 37214",378257158,/homedetails/1303-Priest-Woods-Ct-Nashville-TN-37214/2096389178_zpid/
+37076,36.132957,-86.53687,2225.0,3,2.0,1230,"523 Taffy Way, Hermitage, TN 37076",7232135033,/homedetails/523-Taffy-Way-Hermitage-TN-37076/2067274516_zpid/
+37076,36.22632,-86.57148,2120.0,3,2.0,1154,"941 Denise Dr, Old Hickory, TN 37138",6343914643,/homedetails/941-Denise-Dr-Old-Hickory-TN-37138/80356845_zpid/
+37076,36.15122,-86.57864,2875.0,5,3.0,2513,"5980 Hagar Valley Dr, Hermitage, TN 37076",403492346,/homedetails/5980-Hagar-Valley-Dr-Hermitage-TN-37076/2056534192_zpid/
+37076,36.13991,-86.63756,1595.0,3,2.0,1044,"1107 Quail Ct W, Nashville, TN 37214",7826202498,/homedetails/1107-Quail-Ct-W-Nashville-TN-37214/41136823_zpid/
+37076,36.199615,-86.52339,1989.0,4,3.5,1600,"145 Hickory Station Ln, Mount Juliet, TN 37122",9043888855,/homedetails/145-Hickory-Station-Ln-Mount-Juliet-TN-37122/247080988_zpid/
+37076,36.219418,-86.62534,2255.0,3,2.5,1587,"4611 Conway Ct, Old Hickory, TN 37138",7870456837,/homedetails/4611-Conway-Ct-Old-Hickory-TN-37138/41080178_zpid/
+37076,36.217052,-86.63375,2395.0,3,3.0,1909,"1732 Aaronwood Dr, Old Hickory, TN 37138",9483070607,/homedetails/1732-Aaronwood-Dr-Old-Hickory-TN-37138/41078457_zpid/
+37076,36.151203,-86.57834,2720.0,4,2.5,2297,"5984 Hagar Valley Dr, Hermitage, TN 37076",5958431818,/homedetails/5984-Hagar-Valley-Dr-Hermitage-TN-37076/2055880171_zpid/
+37076,36.218254,-86.62846,2240.0,4,2.0,1780,"1616 Aaronwood Dr, Old Hickory, TN 37138",10533881652,/homedetails/1616-Aaronwood-Dr-Old-Hickory-TN-37138/41078545_zpid/
+37076,36.19117,-86.56877,2295.0,3,2.0,2151,"1041 Nighthawk Ln, Mount Juliet, TN 37122",6663999517,/homedetails/1041-Nighthawk-Ln-Mount-Juliet-TN-37122/80363390_zpid/
+37076,36.188023,-86.579575,3200.0,4,2.5,2763,"437 Landings Way, Mount Juliet, TN 37122",7118703525,/homedetails/437-Landings-Way-Mount-Juliet-TN-37122/108742547_zpid/
+37076,36.22475,-86.59553,1500.0,2,2.0,1570,"914 Old Fountain Pl, Hermitage, TN 37076",9661806624,/homedetails/914-Old-Fountain-Pl-Hermitage-TN-37076/41079983_zpid/
+37076,36.204525,-86.52463,3600.0,4,3.0,3000,"27 4th Ave, Mount Juliet, TN 37122",8956460,/homedetails/27-4th-Ave-Mount-Juliet-TN-37122/42676635_zpid/
+37076,36.089363,-86.63861,1600.0,2,2.5,1356,"1165 Nashboro Blvd, Nashville, TN 37217",65468961,/homedetails/1165-Nashboro-Blvd-Nashville-TN-37217/71260972_zpid/
+37076,36.161507,-86.58121,1900.0,2,1.0,725,"5209 Dove Trl #A, Hermitage, TN 37076",665339003,/homedetails/5209-Dove-Trl-A-Hermitage-TN-37076/2054747573_zpid/
+37076,36.205784,-86.57492,1500.0,2,1.0,1300,"2339 Devonshire Dr, Old Hickory, TN 37138",429232771,/homedetails/2339-Devonshire-Dr-Old-Hickory-TN-37138/80363120_zpid/
+37076,36.208687,-86.57124,2895.0,3,2.0,1815,"1449 Brighton Cir, Old Hickory, TN 37138",434208695,/homedetails/1449-Brighton-Cir-Old-Hickory-TN-37138/80362874_zpid/
+37076,36.204144,-86.59601,2800.0,2,2.0,2000,"684 Dutchmans Dr, Hermitage, TN 37076",523689478,/homedetails/684-Dutchmans-Dr-Hermitage-TN-37076/41093334_zpid/
+37076,36.19081,-86.61829,2600.0,3,3.0,1633,"1511 Henderson Point Aly, Hermitage, TN 37076",176600390,/homedetails/1511-Henderson-Point-Aly-Hermitage-TN-37076/2055846141_zpid/
+37076,36.153698,-86.63935,1800.0,1,1.0,782,"3320 Falls Creek Dr #3320, Nashville, TN 37214",2922507459,/homedetails/3320-Falls-Creek-Dr-3320-Nashville-TN-37214/2055258791_zpid/
+37076,36.104073,-86.60613,2350.0,3,3.0,1728,"3880 Priest Lake Dr APT 52, Nashville, TN 37217",704954648,/homedetails/3880-Priest-Lake-Dr-APT-52-Nashville-TN-37217/41166150_zpid/
+37076,36.17668,-86.59473,1550.0,2,1.5,1015,"1216 Tulip Grove Rd #A, Hermitage, TN 37076",494785463,/homedetails/1216-Tulip-Grove-Rd-A-Hermitage-TN-37076/2070149591_zpid/
+37076,36.200405,-86.600334,3000.0,3,1.0,1976,"512 Belgium Dr, Hermitage, TN 37076",620617536,/homedetails/512-Belgium-Dr-Hermitage-TN-37076/41093841_zpid/
+37076,36.178474,-86.617714,2750.0,3,4.0,2200,"3746 Central Pike #10, Hermitage, TN 37076",748888347,/homedetails/3746-Central-Pike-10-Hermitage-TN-37076/307238789_zpid/
+37076,36.174088,-86.58275,2000.0,2,3.0,1209,"1242 Hope Village Way #31, Hermitage, TN 37076",1275633911,/homedetails/1242-Hope-Village-Way-31-Hermitage-TN-37076/2062276909_zpid/
+37076,36.22396,-86.56469,2100.0,2,1.0,1196,"106 Valleyview Dr, Old Hickory, TN 37138",5172472169,/homedetails/106-Valleyview-Dr-Old-Hickory-TN-37138/80357547_zpid/
+37076,36.08034,-86.61829,3750.0,3,2.5,1750,"1016 Trevino Pl, Antioch, TN 37013",3540105832,/homedetails/1016-Trevino-Pl-Antioch-TN-37013/296615154_zpid/
+37076,36.22047,-86.587425,1950.0,3,2.0,1350,"4860 Big Horn Dr, Old Hickory, TN 37138",1023266683,/homedetails/4860-Big-Horn-Dr-Old-Hickory-TN-37138/41080449_zpid/
+37076,36.22029,-86.624245,3200.0,3,2.0,1059,"4246 Old Hickory Blvd, Old Hickory, TN 37138",2338438046,/homedetails/4246-Old-Hickory-Blvd-Old-Hickory-TN-37138/41079510_zpid/
+37076,36.09493,-86.63152,2175.0,3,2.5,1800,"3012 Harbor Lights Dr, Nashville, TN 37217",2429907952,/homedetails/3012-Harbor-Lights-Dr-Nashville-TN-37217/55100878_zpid/
+37076,36.178867,-86.596115,2200.0,3,2.5,1694,"1330 Sula Dr, Hermitage, TN 37076",2257818698,/homedetails/1330-Sula-Dr-Hermitage-TN-37076/248420860_zpid/
+37076,36.21231,-86.540474,3495.0,5,4.0,2950,"52 Georgie Way, Mount Juliet, TN 37122",957316468,/homedetails/52-Georgie-Way-Mount-Juliet-TN-37122/2063231300_zpid/
+37076,36.149345,-86.584755,2400.0,3,2.0,1687,"4705 Cape Hope Pass, Hermitage, TN 37076",2600414192,/homedetails/4705-Cape-Hope-Pass-Hermitage-TN-37076/41123960_zpid/
+37076,36.207924,-86.58629,3500.0,3,2.0,1127,"633 Debbie Dr, Hermitage, TN 37076",971077860,/homedetails/633-Debbie-Dr-Hermitage-TN-37076/41094920_zpid/
+37076,36.092876,-86.61181,2100.0,3,3.0,1690,"3421 Meadowlake Ter, Nashville, TN 37217",1634815671,/homedetails/3421-Meadowlake-Ter-Nashville-TN-37217/41166715_zpid/
+37076,36.120598,-86.52054,2850.0,3,2.5,2232,"3610 S Mount Juliet Rd, Hermitage, TN 37076",689895767,/homedetails/3610-S-Mount-Juliet-Rd-Hermitage-TN-37076/42680951_zpid/
+37076,36.204613,-86.63114,1675.0,2,1.0,1000,"326 Bonnahurst Dr #1, Hermitage, TN 37076",7232273955,/homedetails/326-Bonnahurst-Dr-1-Hermitage-TN-37076/2056075627_zpid/
+37076,36.205395,-86.563225,3100.0,4,3.0,3134,"2024 Cairns Dr E, Mount Juliet, TN 37122",1871173985,/homedetails/2024-Cairns-Dr-E-Mount-Juliet-TN-37122/80377777_zpid/
+37076,36.17539,-86.59063,1300.0,2,1.0,750,"4258 Valley Grove Dr, Hermitage, TN 37076",1457317115,/homedetails/4258-Valley-Grove-Dr-Hermitage-TN-37076/2092875803_zpid/
+37076,36.1704,-86.61579,3000.0,3,2.5,2000,"3005 Lake Dr, Hermitage, TN 37076",2342802848,/homedetails/3005-Lake-Dr-Hermitage-TN-37076/41109900_zpid/
+37076,36.174488,-86.650375,2500.0,4,2.5,2800,"3007 Jenry Dr, Nashville, TN 37214",953891492,/homedetails/3007-Jenry-Dr-Nashville-TN-37214/41108341_zpid/
+37076,36.171314,-86.623085,2900.0,3,2.5,2596,"5033 Sunflower Ln, Hermitage, TN 37076",38610612,/homedetails/5033-Sunflower-Ln-Hermitage-TN-37076/331674334_zpid/
+37076,36.14372,-86.630005,1895.0,3,2.0,1224,"941 Wemberton Dr, Nashville, TN 37214",65730612,/homedetails/941-Wemberton-Dr-Nashville-TN-37214/41136129_zpid/
+37076,36.131645,-86.63721,2700.0,4,2.5,2523,"1333 Timber Valley Dr, Nashville, TN 37214",2604505512,/homedetails/1333-Timber-Valley-Dr-Nashville-TN-37214/41137290_zpid/
+37076,36.16716,-86.658134,1200.0,2,1.0,685,"102 Donelsonwood Dr #102, Nashville, TN 37214",97683472,/homedetails/102-Donelsonwood-Dr-102-Nashville-TN-37214/2054602085_zpid/
+37076,36.143,-86.620766,3175.0,3,2.5,1836,"1608 Lincoya Bay Dr, Nashville, TN 37214",8107523759,/homedetails/1608-Lincoya-Bay-Dr-Nashville-TN-37214/82697923_zpid/
+37076,36.20257,-86.61306,2500.0,3,2.0,1179,"204 Weldon Dr, Hermitage, TN 37076",1131501735,/homedetails/204-Weldon-Dr-Hermitage-TN-37076/41093617_zpid/
+37076,36.160065,-86.652596,1800.0,2,1.0,850,"514 Cottonwood Dr, Nashville, TN 37214",1019717895,/homedetails/514-Cottonwood-Dr-Nashville-TN-37214/41121073_zpid/
+37076,36.20857,-86.572205,2600.0,3,2.5,2100,"1457 Brighton Cir, Old Hickory, TN 37138",1295100963,/homedetails/1457-Brighton-Cir-Old-Hickory-TN-37138/80362953_zpid/
+37076,36.154934,-86.6556,1800.0,3,1.0,1003,"2928 Dunmore Dr, Nashville, TN 37214",2232695784,/homedetails/2928-Dunmore-Dr-Nashville-TN-37214/41121593_zpid/
+37076,36.21702,-86.62301,1550.0,2,1.0,1089,"108 2nd St, Old Hickory, TN 37138",413498274,/homedetails/108-2nd-St-Old-Hickory-TN-37138/2123491613_zpid/
+37076,36.187386,-86.54317,3200.0,4,3.0,2625,"1619 Southampton Way, Mount Juliet, TN 37122",1623676843,/homedetails/1619-Southampton-Way-Mount-Juliet-TN-37122/202129428_zpid/
+37076,36.212048,-86.59549,2400.0,3,2.0,1484,"513 Frankfort Dr, Hermitage, TN 37076",1140642501,/homedetails/513-Frankfort-Dr-Hermitage-TN-37076/41092378_zpid/
+37076,36.1478,-86.6383,2100.0,3,2.0,1198,"204 Fitzpatrick Pl, Nashville, TN 37214",1266597342,/homedetails/204-Fitzpatrick-Pl-Nashville-TN-37214/41136350_zpid/
+37076,36.218933,-86.63022,2300.0,3,2.5,2108,"5014 Southfork Blvd, Old Hickory, TN 37138",2168303610,/homedetails/5014-Southfork-Blvd-Old-Hickory-TN-37138/67646489_zpid/
+37076,36.18246,-86.58487,1900.0,3,2.0,1102,"5900 Colchester Dr, Hermitage, TN 37076",1722934705,/homedetails/5900-Colchester-Dr-Hermitage-TN-37076/41110532_zpid/
+37076,36.16379,-86.65058,1499.0,2,1.0,800,"208 Stewarts Ferry Pike #208, Nashville, TN 37214",2254321743,/homedetails/208-Stewarts-Ferry-Pike-208-Nashville-TN-37214/2055463798_zpid/
+37076,36.095444,-86.63788,1800.0,2,2.5,1276,"741 Longhunter Ct, Nashville, TN 37217",5369448897,/homedetails/741-Longhunter-Ct-Nashville-TN-37217/41165180_zpid/
+37076,36.225315,-86.539154,2000.0,3,2.5,1679,"1015 Livingstone Ln, Mount Juliet, TN 37122",3529820193,/homedetails/1015-Livingstone-Ln-Mount-Juliet-TN-37122/202128137_zpid/
+37076,36.20682,-86.61652,1900.0,3,2.0,1125,"4287 Sweden Dr, Hermitage, TN 37076",3529403417,/homedetails/4287-Sweden-Dr-Hermitage-TN-37076/41092702_zpid/
+37076,36.175434,-86.59487,1300.0,2,1.0,754,"1304 Tulip Grove Rd, Hermitage, TN 37076",3978698297,/homedetails/1304-Tulip-Grove-Rd-Hermitage-TN-37076/41110068_zpid/
+37076,36.157555,-86.66134,2000.0,2,2.0,1280,"729 Kent Rd #729, Nashville, TN 37214",3976188107,/homedetails/729-Kent-Rd-729-Nashville-TN-37214/2055500683_zpid/
+37076,36.180454,-86.59703,2895.0,4,2.5,2355,"149 Tulip Grove Poin, Hermitage, TN 37076",5868970905,/homedetails/149-Tulip-Grove-Poin-Hermitage-TN-37076/2054825143_zpid/
+37076,36.089874,-86.62886,2000.0,3,2.5,1500,"2156 Nashboro Blvd, Nashville, TN 37217",103434933,/homedetails/2156-Nashboro-Blvd-Nashville-TN-37217/67641325_zpid/
+37076,36.217236,-86.62323,1350.0,2,1.0,729,"4332 Old Hickory Blvd #A, Old Hickory, TN 37138",21080144,/homedetails/4332-Old-Hickory-Blvd-A-Old-Hickory-TN-37138/2054588115_zpid/
+37076,36.1291,-86.635185,1800.0,2,2.5,1584,"1033 Pleasant View Dr, Nashville, TN 37214",33134573,/homedetails/1033-Pleasant-View-Dr-Nashville-TN-37214/41137493_zpid/
+37076,36.168446,-86.61559,1995.0,2,2.5,1216,"314 Mapleton Aly, Hermitage, TN 37076",638292648,/homedetails/314-Mapleton-Aly-Hermitage-TN-37076/103865665_zpid/
+37076,36.216785,-86.63026,2040.0,3,2.0,1332,"608 Granwood Blvd, Old Hickory, TN 37138",1226644551,/homedetails/608-Granwood-Blvd-Old-Hickory-TN-37138/41078625_zpid/
+37076,36.18634,-86.60564,2610.0,3,2.0,2061,"1029 Bret Ridge Dr, Hermitage, TN 37076",2091066755,/homedetails/1029-Bret-Ridge-Dr-Hermitage-TN-37076/41109176_zpid/
+37076,36.22023,-86.59022,1699.0,2,1.5,1000,"4738 Cascade Dr, Old Hickory, TN 37138",551001821,/homedetails/4738-Cascade-Dr-Old-Hickory-TN-37138/41080265_zpid/
+37076,36.173107,-86.62012,2875.0,3,2.0,1634,"235 Hermitage Point Dr, Hermitage, TN 37076",1189059583,/homedetails/235-Hermitage-Point-Dr-Hermitage-TN-37076/337444350_zpid/
+37076,36.20941,-86.56659,2130.0,3,2.0,1416,"2553 Edinburgh St, Old Hickory, TN 37138",1215961511,/homedetails/2553-Edinburgh-St-Old-Hickory-TN-37138/80361966_zpid/
+37076,36.143887,-86.644196,1475.0,1,1.0,917,"3055 Casa Dr, Nashville, TN 37214",409150555,/homedetails/3055-Casa-Dr-Nashville-TN-37214/41135950_zpid/
+37076,36.13946,-86.63493,1895.0,3,2.0,1215,"3305 White Pine Dr, Nashville, TN 37214",341969950,/homedetails/3305-White-Pine-Dr-Nashville-TN-37214/41136609_zpid/
+37076,36.183605,-86.60269,1850.0,3,2.0,1825,"1812 Barnwell Ct, Hermitage, TN 37076",1415597117,/homedetails/1812-Barnwell-Ct-Hermitage-TN-37076/41109144_zpid/
+37076,36.218166,-86.54394,3255.0,4,4.0,3320,"302 Woodlawn Dr, Mount Juliet, TN 37122",3071362135,/homedetails/302-Woodlawn-Dr-Mount-Juliet-TN-37122/42670681_zpid/
+37076,36.150246,-86.63367,1725.0,2,1.5,1156,"127 Lakebrink Dr, Nashville, TN 37214",2216826132,/homedetails/127-Lakebrink-Dr-Nashville-TN-37214/41122734_zpid/
+37076,36.158,-86.64202,1995.0,4,1.5,1672,"3220 Cloverwood Dr, Nashville, TN 37214",2728570680,/homedetails/3220-Cloverwood-Dr-Nashville-TN-37214/41121750_zpid/
+37076,36.2099,-86.5852,1825.0,3,2.0,1326,"538 Debbie Dr, Hermitage, TN 37076",1651389455,/homedetails/538-Debbie-Dr-Hermitage-TN-37076/41094836_zpid/
+37076,36.219246,-86.603264,2100.0,3,2.0,1802,"708 Sweetwater Cir, Old Hickory, TN 37138",3422817510,/homedetails/708-Sweetwater-Cir-Old-Hickory-TN-37138/41080206_zpid/
+37076,36.181797,-86.61111,1640.0,2,1.0,750,"3510 Albee Dr, Hermitage, TN 37076",9623691372,/homedetails/3510-Albee-Dr-Hermitage-TN-37076/2056951732_zpid/
+37076,36.2223,-86.62988,1899.0,3,2.0,1468,"4437 S Trace Blvd, Old Hickory, TN 37138",1005327581,/homedetails/4437-S-Trace-Blvd-Old-Hickory-TN-37138/41079626_zpid/
+37076,36.174343,-86.59001,1395.0,2,1.0,800,"4404 Gina Brooke Dr, Hermitage, TN 37076",3913853934,/homedetails/4404-Gina-Brooke-Dr-Hermitage-TN-37076/41110120_zpid/
+37076,36.177197,-86.58536,1275.0,2,1.0,750,"4644 Forest Ridge Dr, Hermitage, TN 37076",5469070890,/homedetails/4644-Forest-Ridge-Dr-Hermitage-TN-37076/41110684_zpid/
+37076,36.087097,-86.64731,1281.0,1,1.0,645,"115 Nashboro Blvd, Nashville, TN",21524174,/apartments/nashville-tn/the-annaline/5XhxdH/
+37076,36.08709,-86.6473,1239.0,1,1.0,645,"115 Nashboro Blvd, Nashville, TN",21524992,/apartments/nashville-tn/the-annaline/5XhxdH/
+37076,36.084297,-86.643074,1316.0,1,1.0,800,"500 Brooksboro Ter, Nashville, TN",370372867,/apartments/nashville-tn/brighton-valley-apts/5XhxX5/
+37076,36.14543,-86.62603,1395.0,2,2.0,1152,"3000 Lincoya Bay Dr, Nashville, TN",421947886,/apartments/nashville-tn/lincoya-bay-apartments-and-townhomes/5Xhxf2/
+37076,36.18804,-86.62739,1190.0,1,1.0,700,"3417 Lebanon Pike, Hermitage, TN",75862971,/apartments/hermitage-tn/jackson-grove-apartment-homes/5XhxfL/
+37076,36.144226,-86.622765,1250.0,1,1.0,714,"3000 Lincoya Bay Dr, Nashville, TN",281272430,/apartments/nashville-tn/lincoya-bay-apartments-and-townhomes/5Xhxf2/

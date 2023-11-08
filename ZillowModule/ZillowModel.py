@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import re
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -8,16 +7,15 @@ import matplotlib.pyplot as plt
 from sklearn.compose import make_column_transformer
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler, OneHotEncoder
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
 import tensorflow as tf
-from tensorflow import keras
-from keras import layers, optimizers, metrics
-from keras.models import Sequential, Model
+from keras import layers
+from keras.models import Sequential
 from keras import backend as K
-
 from warnings import simplefilter
 simplefilter(action='ignore', category=FutureWarning)
+
+from ZillowModule import ValidZipCodesPath, TestListingsPath
 
 
 
@@ -26,7 +24,8 @@ def RMSE(y_true, y_pred):
 
 class ZillowModel():
   def __init__(self, zipCodes:list[str]):
-    df = pd.read_csv('ValidZipCodes.csv', converters={'DELIVERY ZIPCODE':str})
+    # df = pd.read_csv('ValidZipCodes.csv', converters={'DELIVERY ZIPCODE':str})
+    df = pd.read_csv(ValidZipCodesPath, converters={'DELIVERY ZIPCODE':str})
     validZipCodes = list(df['DELIVERY ZIPCODE'])
     
     for zipCode in zipCodes:
@@ -38,7 +37,8 @@ class ZillowModel():
 
   
   def GetData(self, zipCodes:list[str]):
-    df = pd.read_csv('Listings.csv', converters={'zipCode':str})
+    # df = pd.read_csv('Listings.csv', converters={'zipCode':str})
+    df = pd.read_csv(TestListingsPath, converters={'zipCode':str})
     df = df[df['zipCode'].isin(zipCodes)]
     df = df.drop(['latitude', 'longitude', 'address', 'timeOnZillow', 'detailURL'], axis=1)
     df = df.dropna()
@@ -71,7 +71,7 @@ class ZillowModel():
     history = self.model.fit(X_train, Y_train, validation_data=(X_test, Y_test), epochs=150, batch_size=32, verbose=0)
 
     if showLoss:
-      plt.figure(figsize=(15,10))
+      plt.figure(figsize=(10,5))
       plt.subplot(1,2,1)
       plt.plot(history.epoch, history.history['loss'])
       plt.plot(history.epoch, history.history['val_loss'])

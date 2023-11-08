@@ -1,36 +1,41 @@
 import requests 
 
-class Zillow_Session():
-  def __init__(self, proxy_file:str = ''):
+
+class ZillowSession():
+  def __init__(self, proxyFile:str = ''):
     self.session = requests.Session()
-    self.proxy_list = set(open(proxy_file, "r").read().strip().split("\n")) if proxy_file != '' else self.request_proxies_list()
+    self.proxy_list = set(open(proxyFile, "r").read().strip().split("\n")) if proxyFile != '' else self.RequestProxiesList()
     self.working = set()
 
-  def request_proxies_list(self):
-      print('getting a list of proxies')
-      try:
-        response = self.session.get("https://api.proxyscrape.com/v2/", params={'request':'displayproxies','protocol':'http','timeout':10000,'country':'all','ssl':'all','anonymity':'all'}, timeout=30)
-      except Exception as e:
-        print('API failed... could not get proxy list')
-        return None
-      response = response.content.decode('utf-8').strip().split('\r\n')
-      print(len(response), 'proxies found')
-      return response
 
-  def get_proxy(self):
+  def RequestProxiesList(self):
+    print('getting a list of proxies')
+    try:
+      response = self.session.get("https://api.proxyscrape.com/v2/", params={'request':'displayproxies','protocol':'http','timeout':10000,'country':'all','ssl':'all','anonymity':'all'}, timeout=30)
+    except Exception as e:
+      print('API failed... could not get proxy list')
+      return None
+    
+    response = response.content.decode('utf-8').strip().split('\r\n')
+    print(len(response), 'proxies found')
+    return response
+
+
+  def GetProxy(self):
     if len(self.proxy_list) != 0:
       proxy = self.proxy_list.pop()
     else:
       proxy = list(self.working)[0]
     return proxy
 
-  # finds a proxy and provides a session
-  def provide_proxy(self):
+
+  # Finds a proxy and provides a session
+  def ProvideProxy(self):
     print('checking proxy connection...')
     proxy = None
     response = None
     while True:
-      proxy = self.get_proxy()
+      proxy = self.GetProxy()
       try:
         response = self.session.get('https://ident.me/', proxies={'http': f"http://{proxy}"}, timeout=15)
         if response.status_code == 200:
@@ -43,7 +48,7 @@ class Zillow_Session():
             break
           self.working.discard(proxy)
           print(f'connection failed: {proxy}')
-          proxy = self.get_proxy()
+          proxy = self.GetProxy()
       except KeyError as ke:
         if ke.args[0] == 'pop from an empty set':
           print('Proxy list empty')
@@ -54,11 +59,12 @@ class Zillow_Session():
 
     return proxy
 
-  # performs a get request with the given url and proxy
+
+  # Performs a get request with the given url and proxy
   def get(self, url:str, header:dict()={}, params:dict()={}, proxy='', attempts=5):
     # if proxy not provided get one
     if proxy == '':
-      proxy = self.provide_proxy()
+      proxy = self.ProvideProxy()
 
     while True:
       try:
@@ -68,13 +74,14 @@ class Zillow_Session():
         if attempts <= 0:
           break
         print('proxy failed... getting a new proxy')
-        proxy = self.provide_proxy()
+        proxy = self.ProvideProxy()
         attempts -= 1
 
     return response
 
+
 # main function is for testing purposes
-if '__main__' in __name__:
+if __name__ == '__main__':
   header = {
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
     'accept-encoding': 'gzip, deflate, br',
@@ -88,6 +95,7 @@ if '__main__' in __name__:
     'upgrade-insecure-requests': '1',
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
   }
-  z_session = Zillow_Session('')
+
+  z_session = ZillowSession('')
   zipCode = '37916'
   print(z_session.get(f'https://www.zillow.com/homes/for_rent/{zipCode}_rb/', header))
