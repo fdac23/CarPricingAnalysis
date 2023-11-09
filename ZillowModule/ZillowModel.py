@@ -17,7 +17,12 @@ simplefilter(action='ignore', category=FutureWarning)
 
 from ZillowModule import ValidZipCodesPath, TestListingsPath
 
+import os
+from dotenv import load_dotenv
+from pymongo.mongo_client import MongoClient
 
+load_dotenv()
+MONGO_URI = os.getenv('MONGO_URI')
 
 def RMSE(y_true, y_pred):
   return K.sqrt(K.mean(K.square(y_pred - y_true)))
@@ -32,16 +37,55 @@ class ZillowModel():
       if zipCode not in validZipCodes:
         raise ValueError(f'Invalid Zip-Code: {zipCode}')
 
+    self.client = MongoClient(MONGO_URI)
+    self.db = self.client['zipCodes']
+
     df = self.GetData(zipCodes)
     self.TrainModel(df, showLoss=True)
 
+
+  def CheckIfInMongo(self, zipCodes):
+    doesNotExsist = []
+    collections = self.db.list_collection_names()
+    
+    for zipCode in zipCodes:
+      if (zipCode not in collections):
+        doesNotExsist.append(zipCode)
+      
+    return doesNotExsist
+
   
   def GetData(self, zipCodes:list[str]):
-    # df = pd.read_csv('Listings.csv', converters={'zipCode':str})
-    df = pd.read_csv(TestListingsPath, converters={'zipCode':str})
-    df = df[df['zipCode'].isin(zipCodes)]
-    df = df.drop(['latitude', 'longitude', 'address', 'timeOnZillow', 'detailURL'], axis=1)
+    zipCodesNotInMongo = self.CheckIfInMongo(zipCodes)
+    if (len(zipCodesNotInMongo) != 0):
+        print('Zip code(s) not in database: ', zipCodesNotInMongo)
+        return -1
+
+    df = pd.DataFrame(columns=['zipCode', 'price', 'numBeds', 'numBaths', 'area'])
+
+    for zipCode in zipCodes:
+      coll = self.db[zipCode]
+
+      for entry in coll.find():
+        data = {
+           'zipCode': entry['zipCode'],
+           'price': entry['price'],
+           'numBeds': entry['numBeds'],
+           'numBaths': entry['numBaths'],
+           'area': entry['area'],
+        }
+        newRow = pd.Series(data)
+        df = pd.concat([df, newRow.to_frame().T], ignore_index=True)
+    
     df = df.dropna()
+    convert_dict = {
+      'zipCode': str,
+      'price': float,
+      'numBeds': float,
+      'numBaths': float,
+      'area': float
+    }
+    df = df.astype(convert_dict)
     return df
   
 
