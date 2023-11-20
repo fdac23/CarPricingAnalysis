@@ -87,7 +87,7 @@ class Visualize:
         plt.xlabel('Time on Zillow (days)')
         plt.ylabel('Price ($)')
         plt.grid(True)
-        self.SavePlot(zipcode, "heatmap.png", plt, "plt")
+        self.SavePlot(zipcode, "timevprice.png", plt, "plt")
 
     def AddressWordCloud(self, zipcode, price_threshold=2000):
         if not self.CheckCollectionExistence(zipcode):
