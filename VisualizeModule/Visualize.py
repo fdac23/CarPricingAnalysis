@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from wordcloud import WordCloud, STOPWORDS
 import pymongo
 import folium
+import math
 
 class Visualize:
     def __init__(self):
@@ -48,9 +49,10 @@ class Visualize:
         correlation_matrix = df.corr()
 
         plt.figure(figsize=(8, 10))
-        sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f", linewidths=.5)
+        sns.heatmap(correlation_matrix, annot=True, cmap="YlGnBu")
         plt.title(f'Correlation Heatmap for Zip Code {zipcode}')
-        self.SavePlot(zipcode, "heatmap.png", plt, "plt")
+        #self.SavePlot(zipcode, "heatmap.png", plt, "plt")
+        plt.show()
     
     def GeoSpatialMap(self, zipcode):
         if not self.CheckCollectionExistence(zipcode):
@@ -87,7 +89,8 @@ class Visualize:
         plt.xlabel('Time on Zillow (days)')
         plt.ylabel('Price ($)')
         plt.grid(True)
-        self.SavePlot(zipcode, "timevprice.png", plt, "plt")
+        #self.SavePlot(zipcode, "timevprice.png", plt, "plt")
+        plt.show()
 
     def AddressWordCloud(self, zipcode, price_threshold=2000):
         if not self.CheckCollectionExistence(zipcode):
@@ -111,17 +114,84 @@ class Visualize:
         plt.imshow(wordcloud, interpolation='bilinear')
         plt.axis('off')
         plt.title(f'Word Cloud of Apartment Addresses for Zip Code {zipcode}')
-        self.SavePlot(zipcode, "wordcloud.png", plt, "plt")
+        #self.SavePlot(zipcode, "wordcloud.png", plt, "plt")
+        plt.show()
 
+    def FeatureBoxPlot(self, zip_codes, feature):
+        numerical_columns = ['price', 'numBeds', 'numBaths', 'area']
 
-vis = Visualize()
-zipcode = "37920"
+        if feature not in numerical_columns:
+            raise ValueError("Invalid feature. Please choose from 'price', 'numBeds', 'numBaths', or 'area'.")
 
-#Creates word cloud of address names. Only includes listings of price_threshold and up
-vis.AddressWordCloud(zipcode, price_threshold=2000)
-#Creates a heatmap based on price, numBedRooms, etc..
-vis.CorrelationHeatMap(zipcode)
-#Creates a scatter plot showing correlation between time on Zillow and price
-vis.ScatterTimeVPrice(zipcode)
-#Creates a map with a pin for each address. Pins show price, beds, and baths.
-vis.GeoSpatialMap(zipcode)
+        fig, ax = plt.subplots(figsize=(10, 8))
+
+        box_data = []
+        for i, zip_code in enumerate(zip_codes):
+            if not self.CheckCollectionExistence(zip_code):
+                print(f"{zip_code} not a collection")
+                return
+            
+            collection = self.db[zip_code]
+
+            cursor = collection.find({}, {'_id': 0, feature: 1})
+
+            df = pd.DataFrame(list(cursor))
+
+            box_data.append(df[feature])
+
+        ax.boxplot(box_data, vert=True, labels=zip_codes)
+        
+        plt.xlabel('Zip Codes')
+        plt.ylabel(feature.capitalize())
+        plt.title(f'Box Plot of {feature.capitalize()} for Zip Codes')
+        plt.show()
+    
+
+    def CorrelationHeatMaps(self, zipcodes):
+        num_maps = len(zipcodes)
+
+        # Ensure that there are no more than six heat maps
+        if num_maps > 6:
+            print("Too many zip codes. Displaying up to six heat maps.")
+            zipcodes = zipcodes[:6]
+            num_maps = 6
+
+        # Calculate the number of rows and columns for subplots
+        num_rows = math.ceil(num_maps / 2)
+        num_cols = min(2, num_maps)
+
+        # Adjust for odd number of subplots
+        if num_maps % 2 != 0:
+            num_cols = 1
+
+        # Create subplots with gridspec_kw
+        fig, axes = plt.subplots(nrows=num_rows, ncols=num_cols, figsize=(12, 8), gridspec_kw={'width_ratios': [2] * num_cols})
+
+        for i, zipcode in enumerate(zipcodes):
+            row_idx = i // num_cols
+            col_idx = i % num_cols
+
+            if num_maps > 1:
+                ax = axes[row_idx, col_idx]
+            else:
+                ax = axes  # When there is only one heatmap
+
+            if not self.CheckCollectionExistence(zipcode):
+                print(f"{zipcode} not a collection")
+                continue
+
+            collection = self.db[zipcode]
+            cursor = collection.find({'zipCode': zipcode}, {'_id': 0, 'price': 1, 'numBeds': 1, 'numBaths': 1, 'area': 1})
+
+            df = pd.DataFrame(list(cursor))
+            correlation_matrix = df.corr()
+
+            # Format the correlation matrix values as percentages
+            correlation_matrix_percentage = correlation_matrix.applymap(lambda x: f'{x:.2%}')
+
+            sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', linewidths=.5, ax=ax)
+            ax.set_title(f'Correlation Heatmap - {zipcode}')
+
+        # Adjust layout and show the plot
+        plt.tight_layout()
+        plt.show()
