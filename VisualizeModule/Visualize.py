@@ -7,6 +7,7 @@ from wordcloud import WordCloud, STOPWORDS
 import pymongo
 import folium
 import math
+from IPython.display import display
 
 class Visualize:
     def __init__(self):
@@ -37,6 +38,7 @@ class Visualize:
             if z == zipcode: return True
         return False
 
+    #Takes a single zipcode string as an argument. Produces one heatmap
     def CorrelationHeatMap(self, zipcode: str):
         if not self.CheckCollectionExistence(zipcode):
             print(f"{zipcode} not a collection")
@@ -54,45 +56,34 @@ class Visualize:
         #self.SavePlot(zipcode, "heatmap.png", plt, "plt")
         plt.show()
     
-    def GeoSpatialMap(self, zipcode):
+
+    #Takes a single zipcode string as an argument
+    #Can take a feature argument to show ScatterVFeature, but other features not so interesting
+    def ScatterTimeVPrice(self, zipcode, feature="price"):
+        my_dict = {"area": "SqFt", "price": "($)", "numBeds": "", "numBaths": ""}
         if not self.CheckCollectionExistence(zipcode):
             print(f"{zipcode} not a collection")
             return
         
         collection = self.db[zipcode]
-        cursor = collection.find({}, {'_id': 0, 'latitude': 1, 'longitude': 1, 'price': 1, 'numBeds': 1, 'numBaths': 1})
+        cursor = collection.find({}, {'_id': 0, 'timeOnZillow': 1, feature: 1})
 
         data = pd.DataFrame(list(cursor))
-        m = folium.Map(location=[data['latitude'].mean(), data['longitude'].mean()], zoom_start=12)
-
-        for _, row in data.iterrows():
-            folium.Marker([row['latitude'], row['longitude']],
-                        popup=f"Price: ${row['price']} | Beds: {row['numBeds']} | Baths: {row['numBaths']}",
-                        icon=folium.Icon(color='blue')).add_to(m)
-
-        html_filename = f'geospatial_map_{zipcode}.html'
-        self.SavePlot(zipcode, html_filename, m, "folio")
-    
-    def ScatterTimeVPrice(self, zipcode):
-        if not self.CheckCollectionExistence(zipcode):
-            print(f"{zipcode} not a collection")
-            return
-        
-        collection = self.db[zipcode]
-        cursor = collection.find({}, {'_id': 0, 'timeOnZillow': 1, 'price': 1})
-
-        data = pd.DataFrame(list(cursor))
+        data['timeOnZillow_days'] = data['timeOnZillow'] / (24 * 60 * 60 * 1000)
 
         plt.figure(figsize=(10, 6))
-        plt.scatter(data['timeOnZillow'], data['price'], alpha=0.5)
-        plt.title(f'Time on Zillow vs Price for Zip Code {zipcode}')
+        plt.scatter(data['timeOnZillow_days'], data[feature], alpha=0.5)
+        plt.title(f'Time on Zillow vs {feature.capitalize()} for Zip Code {zipcode}')
         plt.xlabel('Time on Zillow (days)')
-        plt.ylabel('Price ($)')
+        plt.ylabel(f'{feature.capitalize()} {my_dict[feature]}')
         plt.grid(True)
         #self.SavePlot(zipcode, "timevprice.png", plt, "plt")
         plt.show()
 
-    def AddressWordCloud(self, zipcode, price_threshold=2000):
+
+    #Shows a word cloud of street names, takes a single string zipcode as an argument.
+    #Optional price thresholds variables. Default will show most expensive addresses
+    def AddressWordCloud(self, zipcode, price_threshold_lb=2000, price_threshold_ub=10000):
         if not self.CheckCollectionExistence(zipcode):
             print(f"{zipcode} not a collection")
             return
@@ -101,11 +92,12 @@ class Visualize:
         cursor = collection.find({}, {'_id': 0, 'address': 1, 'price': 1})
 
         df = pd.DataFrame(list(cursor))
-        filtered_df = df[df['price'] > price_threshold]
+        filtered_df = df[df['price'] > price_threshold_lb]
+        filtered_df = filtered_df[filtered_df['price'] < price_threshold_ub]
 
         text = ' '.join(filtered_df['address']).lower()
 
-        stop_words = set(['knoxville', 'tn', 'seymour', 'louisville', 'ln', 'ave', 'pike', 'rd', 'apt', 'dr', 'hwy'])
+        stop_words = set(['cir', 'knoxville', 'tn', 'seymour', 'louisville', 'ln', 'ave', 'pike', 'rd', 'apt', 'dr', 'hwy', 'w', 'st', 'se', 'ave'])
         stop_words = stop_words.union(set(STOPWORDS))
 
         wordcloud = WordCloud(width=800, height=400, background_color='white', stopwords=stop_words).generate(text)
@@ -117,6 +109,8 @@ class Visualize:
         #self.SavePlot(zipcode, "wordcloud.png", plt, "plt")
         plt.show()
 
+    #Takes a list as an argument. List must have at least 1 zip code string
+    #Takes a feature as an argument
     def FeatureBoxPlot(self, zip_codes, feature):
         numerical_columns = ['price', 'numBeds', 'numBaths', 'area']
 
@@ -136,6 +130,7 @@ class Visualize:
             cursor = collection.find({}, {'_id': 0, feature: 1})
 
             df = pd.DataFrame(list(cursor))
+            df = df.dropna(subset=[feature])
 
             box_data.append(df[feature])
 
@@ -146,52 +141,78 @@ class Visualize:
         plt.title(f'Box Plot of {feature.capitalize()} for Zip Codes')
         plt.show()
     
-
+    #Takes a list with two zipcode strings as an argument.
+    #Displays heatmaps side by side
     def CorrelationHeatMaps(self, zipcodes):
-        num_maps = len(zipcodes)
-
-        # Ensure that there are no more than six heat maps
-        if num_maps > 6:
-            print("Too many zip codes. Displaying up to six heat maps.")
-            zipcodes = zipcodes[:6]
-            num_maps = 6
-
-        # Calculate the number of rows and columns for subplots
-        num_rows = math.ceil(num_maps / 2)
-        num_cols = min(2, num_maps)
-
-        # Adjust for odd number of subplots
-        if num_maps % 2 != 0:
-            num_cols = 1
-
-        # Create subplots with gridspec_kw
-        fig, axes = plt.subplots(nrows=num_rows, ncols=num_cols, figsize=(12, 8), gridspec_kw={'width_ratios': [2] * num_cols})
+        if len(zipcodes) > 2:
+            print("Please no more than 2 zip codes.")
+            return
+        
+        fig, axes = plt.subplots(1, 2, figsize=(15, 6))
 
         for i, zipcode in enumerate(zipcodes):
-            row_idx = i // num_cols
-            col_idx = i % num_cols
-
-            if num_maps > 1:
-                ax = axes[row_idx, col_idx]
-            else:
-                ax = axes  # When there is only one heatmap
-
             if not self.CheckCollectionExistence(zipcode):
                 print(f"{zipcode} not a collection")
                 continue
 
             collection = self.db[zipcode]
-            cursor = collection.find({'zipCode': zipcode}, {'_id': 0, 'price': 1, 'numBeds': 1, 'numBaths': 1, 'area': 1})
+            cursor = collection.find({"zipCode": zipcode}, {"_id": 0, "price": 1, "numBeds": 1, "numBaths": 1, "area": 1})
 
             df = pd.DataFrame(list(cursor))
             correlation_matrix = df.corr()
 
-            # Format the correlation matrix values as percentages
-            correlation_matrix_percentage = correlation_matrix.applymap(lambda x: f'{x:.2%}')
+            sns.heatmap(correlation_matrix, annot=True, cmap="YlGnBu", linewidths=.5, ax=axes[i])
+            axes[i].set_title(f"Correlation Heatmap - {zipcode}")
 
-            sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', linewidths=.5, ax=ax)
-            ax.set_title(f'Correlation Heatmap - {zipcode}')
-
-        # Adjust layout and show the plot
         plt.tight_layout()
         plt.show()
+
+
+    #Takes a single zip code string as an argument
+    def GeoSpatialMap(self, zipcode):
+        if not self.CheckCollectionExistence(zipcode):
+            print(f"{zipcode} not a collection")
+            return
+        
+        collection = self.db[zipcode]
+        cursor = collection.find({}, {'_id': 0, 'latitude': 1, 'longitude': 1, 'price': 1, 'numBeds': 1, 'numBaths': 1})
+
+        data = pd.DataFrame(list(cursor))
+
+        # Define price ranges and corresponding colors
+        price_ranges = [(0, 999), (1000, 1499), (1500, 1999), (2000, 2499), (2500, 2999), (3000, float('inf'))]
+        colors = ['gray', 'blue', 'green', 'orange', 'red', 'purple']
+
+        m = folium.Map(location=[data['latitude'].mean(), data['longitude'].mean()], zoom_start=12)
+
+        for _, row in data.iterrows():
+            color = 'gray'
+            for i, (lower, upper) in enumerate(price_ranges):
+                if lower <= row['price'] <= upper:
+                    color = colors[i]
+                    break
+
+            folium.Marker([row['latitude'], row['longitude']],
+                        popup=f"Price: ${row['price']} | Beds: {row['numBeds']} | Baths: {row['numBaths']}",
+                        icon=folium.Icon(color=color)).add_to(m)
+            
+        legend_html = """
+            <div style="position: fixed; 
+                        top: 10px; right: 10px; width: 200px; height: 190px; 
+                        background-color: white; border: 2px solid black; z-index:9999;
+                        font-size:14px;">
+            <p style="margin: 5px;"><b>Legend</b></p>
+            <p style="margin: 5px; color: #333333;">$0 - $999</p>
+            <p style="margin: 5px; color: blue;">$1000 - $1499</p>
+            <p style="margin: 5px; color: green;">$1500 - $1999</p>
+            <p style="margin: 5px; color: orange;">$2000 - $2499</p>
+            <p style="margin: 5px; color: red;">$2500 - $2999</p>
+            <p style="margin: 5px; color: purple;">$3000+</p>
+            </div>
+        """
+
+        m.get_root().html.add_child(folium.Element(legend_html))
+        display(m)
+
+
+    
