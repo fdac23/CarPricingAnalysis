@@ -4,3 +4,8 @@ bs4
 requests
 tensorflow
 pymongo
+folium
+matplotlib
+pandas
+seaborn
+wordcloud
