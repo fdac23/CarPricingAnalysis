@@ -1,7 +1,6 @@
 import requests 
 
-
-class ZillowSession():
+class ZillowSession:
   def __init__(self, proxyFile:str = ''):
     self.session = requests.Session()
     self.proxy_list = set(open(proxyFile, "r").read().strip().split("\n")) if proxyFile != '' else self.RequestProxiesList()
@@ -69,8 +68,6 @@ class ZillowSession():
       try:
         response = self.session.get(url, proxies={'http': f"http://{proxy}"}, timeout=30, headers=header, params=params)
         print(response.status_code)
-        # if response.status_code <= 200 or response.status_code >= 300:
-        #   raise 'Response failed'
         break
       except Exception as e:
         if attempts <= 0:
