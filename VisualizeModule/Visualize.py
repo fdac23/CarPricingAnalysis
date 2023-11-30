@@ -97,7 +97,7 @@ class Visualize:
 
         text = ' '.join(filtered_df['address']).lower()
 
-        stop_words = set(['cir', 'knoxville', 'tn', 'seymour', 'louisville', 'ln', 'ave', 'pike', 'rd', 'apt', 'dr', 'hwy', 'w', 'st', 'se', 'ave'])
+        stop_words = set(['way', 'maryville', 'cir', 'knoxville', 'tn', 'seymour', 'louisville', 'ln', 'ave', 'pike', 'rd', 'apt', 'dr', 'hwy', 'w', 'st', 'se', 'ave'])
         stop_words = stop_words.union(set(STOPWORDS))
 
         wordcloud = WordCloud(width=800, height=400, background_color='white', stopwords=stop_words).generate(text)
