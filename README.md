@@ -1,27 +1,17 @@
 # RentPricingAnalysis
 
 ## Install Instructions 
+
 #### Setup virtual env
+
 Need to create a .env file and add MongoDB token to when one is obtained. This allows access to the database to pull down scraped housing data.
 ```bash
 MONGO_URI = 'mongodb+srv://username:token@cluster0.iwkiwxt.mongodb.net/?retryWrites=true&w=majority'
 ```
-```bash
-conda create -n githubwrapped python-3.6 anaconda 
-conda activate githubwrapped
-```
+
 #### Install requirments
 ```bash 
 pip install -r requirments.txt
-```
-#### Install GCP 
-Go through steps here for your OS / container
-- https://cloud.google.com/sdk/docs/install
-#### Setup GCP
-```bash 
-gcloud auth application-default login
-gcloud services enable bigquery.googleapis.com
-gcloud services list
 ```
 
 ## Project Goals
